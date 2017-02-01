@@ -15,6 +15,10 @@
  * PCoIP RC Agent 2.7.0.4600 uses Multiple PCoIP encoding and options are there during provisioning to use either (2.7.0.4600 or 2.7.0.3589). The logic is present in the Script extension.
 * The PCOIP Agent Logs (v1.9.*) from the Office Client machine of the end-user from <code>C:\Users<user_name>\AppData\Local\Teradici\PCoIPClient\logs</code>
 
+#### MSFT OSCC
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
 #### Reporting bugs
 
 Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://github.com/Azure/azure-accessplatform-windows-gpu/issues)
