@@ -22,6 +22,7 @@ $nvidiaVer = $args[2]
 $storageAcc = $args[3]
 $conName = $args[4]
 $license = $args[5]
+$nvidiaazure = $args[6]
 $registryPath = "HKLM:\Software\Teradici\PCoIP"
 $Name = "pcoip_admin"
 $value = "8"
