@@ -22,7 +22,8 @@ $nvidiaVer = $args[2]
 $storageAcc = $args[3]
 $conName = $args[4]
 $license = $args[5]
-$nvidiaazure = $args[6]
+$nvidiaazureURL = $args[6]
+$nvidiaazure = $args[7]
 $registryPath = "HKLM:\Software\Teradici\PCoIP"
 $Name = "pcoip_admin"
 $value = "8"
@@ -53,22 +54,21 @@ net start nvsvc
 & 'C:\Program Files (x86)\Teradici\PCoIP Agent\licenses\appactutil.exe' appactutil.exe -served -comm soap -commServer https://teradici.flexnetoperations.com/control/trdi/ActivationService -entitlementID $license
 #>
 New-Item -Path $dest -ItemType directory
-$nvidiaUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}_grid_win10_server2016_64bit_international.exe", $storageAcc, $conName, $nvidiaVer)
+
 $teradiciAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/PCoIP_agent_release_installer_{2}_graphics.exe", $storageAcc, $conName, $teradiciAgentVer)
 $leostreamAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/LeostreamAgentSetup{2}.exe", $storageAcc, $conName, $leostreamAgentVer)
-$nvidiaExeName = [System.IO.Path]::GetFileName($nvidiaUrl)
+
 $teradiciExeName = [System.IO.Path]::GetFileName($teradiciAgentUrl)
 $leostreamExeName = [System.IO.Path]::GetFileName($leostreamAgentUrl)
-$nvidiaExePath = [System.String]::Format("{0}{1}", $dest, $nvidiaExeName)
+
 $teradiciExePath = [System.String]::Format("{0}{1}", $dest, $teradiciExeName)
 $leostreamExePath = [System.String]::Format("{0}{1}", $dest, $leostreamExeName)
-Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
-Write-Host "The NVIDIA exe name is '$nvidiaExeName'"
+
 Write-Host "The Teradici Agent exe  Url  is '$teradiciAgentUrl'"
 Write-Host "The Teradici Agent exe name is '$teradiciExeName'"
 Write-Host "The Leostream Agent exe Url is '$leostreamAgentUrl'"
 Write-Host "The Leostream Agent exe name is '$leostreamExeName'"
-Write-Host "The NVIDIDA exe download location is '$nvidiaExePath'"
+
 Write-Host "The Teradici Agent exe downloaded location is '$teradiciExePath'"
 Write-Host "The Leostream Agent exe downloaded location iss '$leostreamExePath'"
 wget $teradiciAgentUrl -OutFile $teradiciExePath
@@ -84,7 +84,9 @@ function Unzip
 
     [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
 }
-wget https://go.microsoft.com/fwlink/?linkid=836843 -OutFile C:\Downloadinstallers\NVAzureDriver.zip
+$nvidiaUrl = [System.String]::Format("{0}",$nvidiaazureURL)
+Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
+wget $nvidiaUrl -OutFile C:\Downloadinstallers\NVAzureDriver.zip
 Unzip "C:\Downloadinstallers\NVAzureDriver.zip" "C:\NVIDIAazure"
 
 $NVIDIAfolder = [System.String]::Format("C:\NVIDIAazure")
@@ -92,6 +94,12 @@ $NVIDIAfolder = [System.String]::Format("C:\NVIDIAazure")
   }
 else
 { 
+$nvidiaUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}_grid_win10_server2016_64bit_international.exe", $storageAcc, $conName, $nvidiaVer)
+$nvidiaExeName = [System.IO.Path]::GetFileName($nvidiaUrl)
+$nvidiaExePath = [System.String]::Format("{0}{1}", $dest, $nvidiaExeName)
+Write-Host "The NVIDIDA exe download location is '$nvidiaExePath'"
+Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
+Write-Host "The NVIDIA exe name is '$nvidiaExeName'"
   wget $nvidiaUrl -OutFile $nvidiaExePath
   & $nvidiaExePath  /s
   Start-Sleep -s 60
