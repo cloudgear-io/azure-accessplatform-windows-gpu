@@ -68,16 +68,36 @@ Write-Host "The Teradici Agent exe  Url  is '$teradiciAgentUrl'"
 Write-Host "The Teradici Agent exe name is '$teradiciExeName'"
 Write-Host "The Leostream Agent exe Url is '$leostreamAgentUrl'"
 Write-Host "The Leostream Agent exe name is '$leostreamExeName'"
-Write-Host "The NVIDIDA exe downloaded location is '$nvidiaExePath'"
+Write-Host "The NVIDIDA exe download location is '$nvidiaExePath'"
 Write-Host "The Teradici Agent exe downloaded location is '$teradiciExePath'"
 Write-Host "The Leostream Agent exe downloaded location iss '$leostreamExePath'"
-wget $nvidiaUrl -OutFile $nvidiaExePath
 wget $teradiciAgentUrl -OutFile $teradiciExePath
 wget $leostreamAgentUrl -OutFile $leostreamExePath
 Start-Sleep -s 360
-& $nvidiaExePath  /s
-Start-Sleep -s 60
-$NVIDIAfolder = [System.String]::Format("C:\NVIDIA\{0}", $nvidiaVer)
+
+if ($nvidiaazure -match "Yes")
+{
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+function Unzip
+{
+    param([string]$zipfile, [string]$outpath)
+
+    [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
+}
+wget https://go.microsoft.com/fwlink/?linkid=836843 -OutFile C:\Downloadinstallers\NVAzureDriver.zip
+Unzip "C:\Downloadinstallers\NVAzureDriver.zip" "C:\NVIDIAazure"
+
+$NVIDIAfolder = [System.String]::Format("C:\NVIDIAazure")
+
+  }
+else
+{ 
+  wget $nvidiaUrl -OutFile $nvidiaExePath
+  & $nvidiaExePath  /s
+  Start-Sleep -s 60
+  $NVIDIAfolder = [System.String]::Format("C:\NVIDIA\{0}", $nvidiaVer)
+}
+
 Write-Host "The NVIDIA Folder name is '$NVIDIAfolder'"
 Set-Location $NVIDIAfolder
 .\setup.exe -s -noreboot -clean
