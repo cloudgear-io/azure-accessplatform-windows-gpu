@@ -24,8 +24,8 @@ $conName = $args[4]
 $license = $args[5]
 $nvidiaazureURL = $args[6]
 $nvidiaazure = $args[7]
-$registryPath = "HKLM:\Software\Teradici\PCoIP"
-$Name = "pcoip_admin"
+$registryPath = "HKLM:\Software\Teradici\PCoIP\pcoip_admin"
+$Name = "pcoip.max_encode_threads"
 $value = "8"
 $Date = Get-Date
 <#
