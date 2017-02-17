@@ -108,6 +108,7 @@ Write-Host "The NVIDIA exe name is '$nvidiaExeName'"
 
 Write-Host "The NVIDIA Folder name is '$NVIDIAfolder'"
 Set-Location $NVIDIAfolder
+Set-ExecutionPolicy Unrestricted -force
 .\setup.exe -s -noreboot -clean
 Start-Sleep -s 180
 & $teradiciExePath /S /NoPostReboot
@@ -132,6 +133,11 @@ else
 { 
   Write-Host  "No Registry entry required ."
 }
+net stop nvsvc
+Start-Sleep -s 240
+Write-Host "Stopping NVIDIA Display Driver"
+net start nvsvc
+Write-Host "Starting NVIDIA Display Driver"
 <# Reboot in 60 seconds #>
 C:\WINDOWS\system32\shutdown.exe -r -f -t 60
 Write-Host "end script"
