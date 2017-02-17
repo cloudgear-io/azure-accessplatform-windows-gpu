@@ -84,6 +84,12 @@ function Unzip
 
     [System.IO.Compression.ZipFile]::ExtractToDirectory($zipfile, $outpath)
 }
+$nvidiacerUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/nvidia.zip", $storageAcc, $conName)
+$nvcerUrl = [System.String]::Format("{0}",$nvidiacerUrl)
+wget $nvcerUrl -OutFile C:\Downloadinstallers\nvidia.zip
+Unzip "C:\Downloadinstallers\nvidia.zip" "C:\"
+certutil -addstore "TrustedPublisher" C:\nvidia.cer
+
 $nvidiaUrl = [System.String]::Format("{0}",$nvidiaazureURL)
 Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
 wget $nvidiaUrl -OutFile C:\Downloadinstallers\NVAzureDriver.zip
