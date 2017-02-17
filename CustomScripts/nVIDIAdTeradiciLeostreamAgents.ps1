@@ -134,8 +134,8 @@ else
   Write-Host  "No Registry entry required ."
 }
 net stop nvsvc
+Write-Host "Stopped NVIDIA Display Driver"
 Start-Sleep -s 240
-Write-Host "Stopping NVIDIA Display Driver"
 net start nvsvc
 Write-Host "Starting NVIDIA Display Driver"
 <# Reboot in 60 seconds #>
