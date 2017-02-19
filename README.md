@@ -24,7 +24,7 @@ P.S: The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with 
  * Details are [here](http://nvidia.custhelp.com/app/answers/detail/a_id/3335/~/tdr-(timeout-detection-and-recovery)-and-collecting-dump-files) 
 * PCoIP RC Agent Log Collection (2.7.0.3589 ) or (2.7.0.4060) from the Teradici System Tray (right click Teradici Icon on System Tray) and collect Agent Logs (from the pop-up).
  * PCoIP RC Agent 2.7.0.4060 uses Multiple PCoIP encoding and options are there during provisioning to use either (2.7.0.4060 or 2.7.0.3589). The logic is present in the Script extension.
-* The PCOIP Agent Logs (v1.9.*) from the Office Client machine of the end-user from <code>C:\Users<user_name>\AppData\Local\Teradici\PCoIPClient\logs</code>
+* The PCOIP Agent Logs (v1.10.*) from the Office Client machine of the end-user from <code>C:\Users<user_name>\AppData\Local\Teradici\PCoIPClient\logs</code>
 
 #### MSFT OSCC
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
