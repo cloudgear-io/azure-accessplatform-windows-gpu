@@ -88,7 +88,7 @@ $nvidiacerUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/n
 $nvcerUrl = [System.String]::Format("{0}",$nvidiacerUrl)
 wget $nvcerUrl -OutFile C:\Downloadinstallers\nvidia.zip
 Unzip "C:\Downloadinstallers\nvidia.zip" "C:\"
-certutil -addstore "TrustedPublisher" C:\nvidia.cer
+certutil -f -addstore "TrustedPublisher" C:\nvidia.cer
 
 $nvidiaUrl = [System.String]::Format("{0}",$nvidiaazureURL)
 Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
