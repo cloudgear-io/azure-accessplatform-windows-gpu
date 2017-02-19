@@ -8,7 +8,8 @@
 #### Prereqs
 **Obtain a Trial License For the Windows Graphics Agent from [here](http://connect.teradici.com/cas-trial) to put in the template parameter**
 
-**NVIDIA GRID 4.1 (369.71) with Azure Driver (Defaulted) is chosen: Then the Driver install is manual (not silent) from C:\NVIDIAazure**
+**NVIDIA GRID 4.1 (369.71) with Azure Driver (Defaulted) and working**
+P.S: The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with certificate force trust - Thanks to [Mathieu Rietman](https://github.com/MathieuRietman)'s [commit on fork](https://github.com/MathieuRietman/azure-accessplatform-windows-gpu/commit/a6bc42bc6936a75200f4d968d31ae0de00fe4e97)
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
