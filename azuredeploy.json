@@ -215,8 +215,9 @@
     },
     "softwareExeNameinfolder": {
       "type": "string",
-      "defaultValue": "opendTect/OpendTect_Installer_win64.exe",
+      "defaultValue": "none",
       "allowedValues": [
+        "none"
         "opendTect/OpendTect_Installer_win64.exe",
         "STARView/STAR-View%2B11.04.010_win64_intel15.0.exe"
       ],
