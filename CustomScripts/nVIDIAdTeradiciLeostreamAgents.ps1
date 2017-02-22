@@ -1,4 +1,4 @@
-$dest = "C:\Downloadinstallers\"
+$dest = "D:\Downloadinstallers\"
 $leostreamAgentVer = $args[0]
 $teradiciAgentVer = $args[1]
 $nvidiaVer = $args[2]
