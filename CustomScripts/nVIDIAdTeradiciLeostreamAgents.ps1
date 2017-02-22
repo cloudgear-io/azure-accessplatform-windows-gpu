@@ -74,14 +74,14 @@ if ($nvidiaazure -match "Yes")
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $nvidiacerUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/nvidia.zip", $storageAcc, $conName)
     $nvcerUrl = [System.String]::Format("{0}",$nvidiacerUrl)
-    wget $nvcerUrl -OutFile C:\Downloadinstallers\nvidia.zip
-    Unzip "C:\Downloadinstallers\nvidia.zip" "C:\"
-    certutil -f -addstore "TrustedPublisher" C:\nvidia.cer
+    wget $nvcerUrl -OutFile D:\Downloadinstallers\nvidia.zip
+    Unzip "D:\Downloadinstallers\nvidia.zip" "D:\"
+    certutil -f -addstore "TrustedPublisher" D:\nvidia.cer
     $nvidiaUrl = [System.String]::Format("{0}",$nvidiaazureURL)
     Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
-    wget $nvidiaUrl -OutFile C:\Downloadinstallers\NVAzureDriver.zip
-    Unzip "C:\Downloadinstallers\NVAzureDriver.zip" "C:\NVIDIAazure"
-    $NVIDIAfolder = [System.String]::Format("C:\NVIDIAazure")
+    wget $nvidiaUrl -OutFile D:\Downloadinstallers\NVAzureDriver.zip
+    Unzip "D:\Downloadinstallers\NVAzureDriver.zip" "D:\NVIDIAazure"
+    $NVIDIAfolder = [System.String]::Format("D:\NVIDIAazure")
   }
 else
 { 
