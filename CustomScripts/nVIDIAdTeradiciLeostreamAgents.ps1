@@ -41,7 +41,8 @@ function Unzip
 if ($softwareExeName -like '*OpendTect*')
 {
     Add-Type -AssemblyName System.IO.Compression.FileSystem
-    $softwareUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}/", $storageAcc, $conName, $softwareExeName)
+    $softwareUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}", $storageAcc, $conName, $softwareExeName)
+     Write-Host "OpendTect download is from '$softwareUrl'"
     $softwareName = "OpendTect.exe"
     $softwarePath = [System.String]::Format("{0}{1}", $dest, $softwareName)
     $softUrl = [System.String]::Format("{0}",$softwareUrl)
@@ -49,7 +50,8 @@ if ($softwareExeName -like '*OpendTect*')
     wget $softUrl -OutFile $softPath
     Write-Host "Get the Sample Block for OpendTect"
     $nlblockzip = "opendTect/F3_Demo_2016_training_v6.zip"
-    $nlblockUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}/", $storageAcc, $conName, $nlblockzip)
+    $nlblockUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}", $storageAcc, $conName, $nlblockzip)
+    Write-Host "NL F3 Block download is from '$nlblockUrl'"
     $nlblockPath = [System.String]::Format("{0}{1}", $dest, $nlblockzip)
     wget $nlblockUrl -OutFile $nlblockPath
     
@@ -57,7 +59,7 @@ if ($softwareExeName -like '*OpendTect*')
 elseif ($softwareExeName -like '*STAR*') 
 {
     Add-Type -AssemblyName System.IO.Compression.FileSystem
-    $softwareUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}/", $storageAcc, $conName, $softwareExeName)
+    $softwareUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}", $storageAcc, $conName, $softwareExeName)
     $softwareName = "STAR.exe"
     $softwarePath = [System.String]::Format("{0}{1}", $dest, $softwareName)
     $softUrl = [System.String]::Format("{0}",$softwareUrl)
