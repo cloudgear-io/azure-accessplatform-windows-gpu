@@ -38,7 +38,7 @@ function Unzip
 }
 
 
-if ($softwareExeName -contains "OpendTect")
+if ($softwareExeName -like '*OpendTect*')
 {
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $softwareUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}/", $storageAcc, $conName, $softwareExeName)
@@ -54,7 +54,7 @@ if ($softwareExeName -contains "OpendTect")
     wget $nlblockUrl -OutFile $nlblockPath
     
   }
-elseif ($softwareExeName -contains "STAR") 
+elseif ($softwareExeName -like '*STAR*') 
 {
     Add-Type -AssemblyName System.IO.Compression.FileSystem
     $softwareUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}/", $storageAcc, $conName, $softwareExeName)
@@ -94,7 +94,7 @@ else
   wget $nvidiaUrl -OutFile $nvidiaExePath
   & $nvidiaExePath  /s
   Start-Sleep -s 60
-  $NVIDIAfolder = [System.String]::Format("C:\NVIDIA\{0}", $nvidiaVer)
+  $NVIDIAfolder = [System.String]::Format("D:\NVIDIA\{0}", $nvidiaVer)
 }
 
 Write-Host "The NVIDIA Folder name is '$NVIDIAfolder'"
