@@ -1,5 +1,5 @@
 # Deploy a Windows NV VM.
-# **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/releases/latest)
+# **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)
 * [Prereqs](#prereqs)
 * [MSFT OSCC](#msft-oscc)
 * [Reporting Bugs](#reporting-bugs)
