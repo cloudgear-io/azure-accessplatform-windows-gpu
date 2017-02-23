@@ -33,16 +33,6 @@ wget $teradiciAgentUrl -OutFile $teradiciExePath
 wget $leostreamAgentUrl -OutFile $leostreamExePath
 Start-Sleep -s 360
 
-
-if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
-  $omsAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/MMASetup-AMD64.exe", $storageAcc, $conName)
-  $omsExeName = [System.IO.Path]::GetFileName($omsAgentUrl)
-  $omsExePath = [System.String]::Format("{0}{1}", $dest, $omsExeName)
-  wget $omsAgentUrl -OutFile $omsExePath
-  MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
-}
-
-
 function Unzip
 {
     param([string]$zipfile, [string]$outpath)
@@ -147,6 +137,16 @@ Write-Host "Stopped NVIDIA Display Driver"
 Start-Sleep -s 240
 net start nvsvc
 Write-Host "Starting NVIDIA Display Driver"
+<#OMS Hook#>
+if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
+  $omsAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/MMASetup-AMD64.exe", $storageAcc, $conName)
+  $omsExeName = [System.IO.Path]::GetFileName($omsAgentUrl)
+  $omsExePath = [System.String]::Format("{0}{1}", $dest, $omsExeName)
+  wget $omsAgentUrl -OutFile $omsExePath
+  MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
+}
+
 <# Reboot in 60 seconds #>
+
 C:\WINDOWS\system32\shutdown.exe -r -f -t 60
 Write-Host "end script"
