@@ -143,6 +143,8 @@ if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
   $omsExeName = [System.IO.Path]::GetFileName($omsAgentUrl)
   $omsExePath = [System.String]::Format("{0}{1}", $dest, $omsExeName)
   wget $omsAgentUrl -OutFile $omsExePath
+  Set-Location $dest
+  Set-ExecutionPolicy Unrestricted -force
   MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
 }
 
