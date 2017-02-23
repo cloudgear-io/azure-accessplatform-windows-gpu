@@ -97,7 +97,7 @@ else
   wget $nvidiaUrl -OutFile $nvidiaExePath
   & $nvidiaExePath  /s
   Start-Sleep -s 60
-  $NVIDIAfolder = [System.String]::Format("D:\NVIDIA\{0}", $nvidiaVer)
+  $NVIDIAfolder = [System.String]::Format("C:\NVIDIA\{0}", $nvidiaVer)
 }
 
 Write-Host "The NVIDIA Folder name is '$NVIDIAfolder'"
