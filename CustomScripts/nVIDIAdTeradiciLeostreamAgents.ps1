@@ -8,6 +8,8 @@ $license = $args[5]
 $nvidiaazureURL = $args[6]
 $nvidiaazure = $args[7]
 $softwareExeName = $args[8]
+$omsWorkSpaceId = $args[9]
+$omsWorkSpaceKey = $args[10] 
 $registryPath = "HKLM:\Software\Teradici\PCoIP\pcoip_admin"
 $Name = "pcoip.max_encode_threads"
 $value = "8"
@@ -30,6 +32,16 @@ Write-Host "The Leostream Agent exe downloaded location is '$leostreamExePath'"
 wget $teradiciAgentUrl -OutFile $teradiciExePath
 wget $leostreamAgentUrl -OutFile $leostreamExePath
 Start-Sleep -s 360
+
+
+if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
+  $omsAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/MMASetup-AMD64.exe", $storageAcc, $conName)
+  $omsExeName = [System.IO.Path]::GetFileName($omsAgentUrl)
+  $omsExePath = [System.String]::Format("{0}{1}", $dest, $omsExeName)
+  wget $omsAgentUrl -OutFile $omsExePath
+  MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
+}
+
 
 function Unzip
 {
