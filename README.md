@@ -7,6 +7,7 @@
 * [MSFT OSCC](#msft-oscc)
 * [Reporting Bugs](#reporting-bugs)
 * [Patches and pull requests](#patches-and-pull-requests)
+* [Optional Usage of Operational Management Suite](#optional-usage-of-operational-management-suite)
 
 #### Prereqs
 **Obtain a Trial License For the Windows Graphics Agent from [here](http://connect.teradici.com/cas-trial) to put in the template parameter**
@@ -59,7 +60,7 @@ Patches can be submitted as GitHub pull requests. If using GitHub please make su
 * login to https://<<OMSWorkspaceName>>.portal.mms.microsoft.com 
 * Add The solutions "Agent Health", "Backup", "Activity Log Analytics" and "Protection & Recovery"  Solutions from the "Solutions Gallery" of the OMS Portal of the workspace.
 * Logon to the OMS Workspace and Go to -> Settings -> "Connected Sources"  -> "Windows Servers" -> Obtain the Workspace ID like <code>ba1e3f33-648d-40a1-9c70-3d8920834669</code> and the "Primary and/or Secondary Key" like <code>xkifyDr2s4L964a/Skq58ItA/M1aMnmumxmgdYliYcC2IPHBPphJgmPQrKsukSXGWtbrgkV2j1nHmU0j8I8vVQ==</code>
-* While Deploying the Template just the WorkspaceID and the Key are to be mentioned and all will be registered. The Windows Agent is already available in the VM once WorkspaceID and Key are put in during Template deployment.
+* While Deploying the Template just the WorkspaceID and the Key are to be mentioned and all will be registered. **The Windows Agent is already available in the VM once WorkspaceID and Key are put in during Template deployment**.
 
 ![OMS Container](https://docs.microsoft.com/en-us/azure/log-analytics/media/log-analytics-windows-agents/oms-direct-agent-connected-sources.png)
 
