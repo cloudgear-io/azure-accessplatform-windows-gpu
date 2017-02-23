@@ -1,6 +1,9 @@
 # Deploy a Windows NV VM.
 # **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)
 * [Prereqs](#prereqs)
+* [Credits](#credits)
+* [Deploy and Visualize](#deploy-and-visualize)
+* [PCoIP with Teradici and NVIDIA GRID Management on Azure for M60 Visualizations](#pcoip-with-teradici-and-nvidia-grid-management-on-azure-for-m60-visualizations)
 * [MSFT OSCC](#msft-oscc)
 * [Reporting Bugs](#reporting-bugs)
 * [Patches and pull requests](#patches-and-pull-requests)
@@ -11,16 +14,19 @@
 * NVIDIA GRID 4.1 (369.71) with Azure Driver (Defaulted) and working
 * All software installers and sample data are in D:\ and system installers like Teradici, Azure NVIDIA GRID Driver installers are in D:\DownloadInstallers
 
-##### Credits
+#### Credits
 * The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with certificate force trust - Thanks to [Mathieu Rietman](https://github.com/MathieuRietman)'s [commit on fork for the -f option](https://github.com/MathieuRietman/azure-accessplatform-windows-gpu/commit/a6bc42bc6936a75200f4d968d31ae0de00fe4e97)
 * Dynamic Disk Selection with take function is as per the [Azure quickstart template](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-dynamic-data-disks-selection)
 
+#### Deploy and Visualize
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
+
+#### PCoIP with Teradici and NVIDIA GRID Management on Azure for M60 Visualizations
 * PCoIP Client Download for Windows is [here](http://teradici.com/swclient-windows)
 * For GRID server interfaces for GPU management, please view [the grid software management sdk user guide](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/367.43-369.17-grid-software-management-sdk-user-guide.pdf)
 * nView needs to be enabled manually. [User Guide](http://www.nvidia.com/content/quadro/pdf/nView-user-guide.pdf)
