@@ -48,4 +48,20 @@ Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://gi
 
 Patches can be submitted as GitHub pull requests. If using GitHub please make sure your branch applies to the current master as a 'fast forward' merge (i.e. without creating a merge commit). Use the `git rebase` command to update your branch to the current master if necessary.
 
+#### Optional Usage of Operational Management Suite
+**OMS Setup (for mostly backup in this case) is optional and the OMS Workspace Id and OMS Workspace Key can either be kept blank or populated post the steps below.**
 
+[Create a free account for MS Azure Operational Management Suite with workspaceName](https://login.mms.microsoft.com/signin.aspx?signUp=on&ref=ms_mms)
+
+* Provide a Name for the OMS Workspace.
+* Link your Subscription to the OMS Portal.
+* Depending upon the region, a Resource Group would be created in the Sunscription like "mms-weu" for "West Europe" and the named OMS Workspace with portal details etc. would be created in the Resource Group.
+* login to https://<<OMSWorkspaceName>>.portal.mms.microsoft.com 
+* Add The solutions "Agent Health", "Backup", "Activity Log Analytics" and "Protection & Recovery"  Solutions from the "Solutions Gallery" of the OMS Portal of the workspace.
+* Logon to the OMS Workspace and Go to -> Settings -> "Connected Sources"  -> "Windows Servers" -> Obtain the Workspace ID like <code>ba1e3f33-648d-40a1-9c70-3d8920834669</code> and the "Primary and/or Secondary Key" like <code>xkifyDr2s4L964a/Skq58ItA/M1aMnmumxmgdYliYcC2IPHBPphJgmPQrKsukSXGWtbrgkV2j1nHmU0j8I8vVQ==</code>
+* While Deploying the Template just the WorkspaceID and the Key are to be mentioned and all will be registered. The Windows Agent is already available in the VM once WorkspaceID and Key are put in during Template deployment.
+
+![OMS Container](https://docs.microsoft.com/en-us/azure/log-analytics/media/log-analytics-windows-agents/oms-direct-agent-connected-sources.png)
+
+* Then one can login to https://<<OMSWorkspaceName>>.portal.mms.microsoft.com  and monitor VM and use Log Analytics and if Required perform automated backups using the corresponding Solutions for OMS.
+ * Or if the OMS Workspace and the Machines are in the same subscription, one can just connect the VM sources manually to the OMS Workspace as Data Sources.
