@@ -145,7 +145,7 @@ if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
   wget $omsAgentUrl -OutFile $omsExePath
   Set-Location $dest
   Set-ExecutionPolicy Unrestricted -force
-  MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
+  .\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
 }
 
 <# Reboot in 60 seconds #>
