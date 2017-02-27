@@ -9,7 +9,8 @@ $nvidiaazureURL = $args[6]
 $nvidiaazure = $args[7]
 $softwareExeName = $args[8]
 $omsWorkSpaceId = $args[9]
-$omsWorkSpaceKey = $args[10] 
+$omsWorkSpaceKey = $args[10]
+$dockerVer = $args[11]
 $registryPath = "HKLM:\Software\Teradici\PCoIP\pcoip_admin"
 $Name = "pcoip.max_encode_threads"
 $value = "8"
@@ -147,6 +148,26 @@ if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
   Set-ExecutionPolicy Unrestricted -force
   .\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
 }
+
+<# Install Docker latest Dev for Windows #>
+$Date = Get-Date
+Write-Host "You input is  '$dockerVer' on '$Date'"
+Write-Host "Un-Installing existing dockerd and Installing Docker for Windows version '$dockerVer' on '$Date'"
+Stop-Service Docker
+dockerd --unregister-service
+Remove-Item "C:\Program Files\docker" -Force -Recurse
+rm C:\ProgramData\docker\docker.pid
+Enable-WindowsOptionalFeature -Online -FeatureName containers -All
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+Invoke-WebRequest "https://master.dockerproject.org/windows/amd64/docker-$dockerVer.zip" -OutFile "$env:TEMP\docker-$dockerVer.zip" -UseBasicParsing
+Expand-Archive -Path "$env:TEMP\docker-$dockerVer.zip" -DestinationPath $env:ProgramFiles
+# For quick use, does not require shell to be restarted.
+$env:path += ";c:\program files\docker"
+# For persistent use, will apply even after a reboot.
+[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)
+dockerd --register-service
+Start-Service Docker
+Write-Host "Installed Docker for Windows version '$dockerVer' on '$Date'. Welcome !!"
 
 <# Reboot in 60 seconds #>
 
