@@ -149,7 +149,7 @@ if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
   .\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
 }
 
-<# Install Docker latest Dev for Windows #>
+<# Install Docker latest Dev for Windows 
 $Date = Get-Date
 Write-Host "You input is  '$dockerVer' on '$Date'"
 Write-Host "Un-Installing existing dockerd and Installing Docker for Windows version '$dockerVer' on '$Date'"
@@ -168,6 +168,7 @@ $env:path += ";c:\program files\docker"
 dockerd --register-service
 Start-Service Docker
 Write-Host "Installed Docker for Windows version '$dockerVer' on '$Date'. Welcome !!"
+#>
 
 <# Reboot in 60 seconds #>
 
