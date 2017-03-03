@@ -1,4 +1,5 @@
 $dest = "D:\Downloadinstallers\"
+$opendtectloc="D:\OpendTect\"
 $leostreamAgentVer = $args[0]
 $teradiciAgentVer = $args[1]
 $nvidiaVer = $args[2]
@@ -22,6 +23,7 @@ $arguments = @(
 		"/S")
 
 New-Item -Path $dest -ItemType directory
+New-Item -Path $opendtectloc -ItemType directory
 
 $teradiciAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/PCoIP_agent_release_installer_{2}_graphics.exe", $storageAcc, $conName, $teradiciAgentVer)
 $teradiciExeName = [System.IO.Path]::GetFileName($teradiciAgentUrl)
