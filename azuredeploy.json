@@ -156,14 +156,14 @@
       "type": "string",
       "defaultValue": "369.71",
       "metadata": {
-        "description": "The NVIDIA Version Name"
+        "description": "The NVIDIA Version"
       }
     },
     "publicIPAddressName": {
       "type": "string",
       "defaultValue": "winm60",
       "metadata": {
-        "description": "The Public Addtress Name"
+        "description": "The Public Address Name"
       }
     },
     "allocationMethod": {
@@ -174,7 +174,7 @@
         "Static"
       ],
       "metadata": {
-        "description": "The Public Addtress Allocation Static or Dynamic"
+        "description": "The Public Address Allocation Static or Dynamic"
       }
     },
     "useSpecificAzureDriver": {
