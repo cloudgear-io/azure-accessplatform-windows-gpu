@@ -140,11 +140,34 @@ else
   Write-Host  "No Registry entry required ."
 }
 
-net stop nvsvc
+<#net stop nvsvc
 Write-Host "Stopped NVIDIA Display Driver"
 Start-Sleep -s 240
 net start nvsvc
-Write-Host "Starting NVIDIA Display Driver"
+Write-Host "Starting NVIDIA Display Driver"#>
+
+<# NVIDIA driver kicking Only needed for 369.71 driver #>
+if ($nvidiaVer -match "369.71")
+{
+    Write-Host "Driver kick needed for this NVIDIA graphics driver, kicking now..."
+    Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
+    
+    Write-Host "Stopping NVIDIA Display Driver"
+    net stop nvsvc
+    Start-Sleep -s 90
+    
+    Write-Host "Disabling NVFBC capture"
+    ./NvFBCEnable -disable
+    Start-Sleep -s 90
+    
+    Write-Host "Enabling NVFBC capture"
+    ./NvFBCEnable -enable
+    Start-Sleep -s 90
+    
+    Write-Host "Starting NVIDIA Display Driver"
+    net start nvsvc
+    Start-Sleep -s 90
+}
 
 <#OMS Hook#>
 if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
