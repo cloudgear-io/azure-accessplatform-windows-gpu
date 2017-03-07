@@ -176,6 +176,11 @@ dockerd --register-service
 Start-Service Docker
 Write-Host "Installed Docker for Windows version '$dockerVer' on '$Date'. Welcome !!" #>
 
+<#Install Docker EE for Windows Server 2016#>
+Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
+set-executionpolicy remotesigned -Force
+Install-Package -Name docker -ProviderName DockerMsftProvider -Force
+
 <# Reboot in 60 seconds #>
 
 C:\WINDOWS\system32\shutdown.exe -r -f -t 60
