@@ -140,11 +140,11 @@ else
   Write-Host  "No Registry entry required ."
 }
 
-<#net stop nvsvc
+net stop nvsvc
 Write-Host "Stopped NVIDIA Display Driver"
 Start-Sleep -s 240
 net start nvsvc
-Write-Host "Starting NVIDIA Display Driver"#>
+Write-Host "Starting NVIDIA Display Driver"
 
 <#OMS Hook#>
 if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
@@ -157,11 +157,11 @@ if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
   .\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
 }
 
-<#Install Docker EE for Windows Server 2016#>
+<#Install Docker EE for Windows Server 2016
 Install-PackageProvider -Name NuGet -MinimumVersion $nuget4dockerVer -Force
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
-<#set-executionpolicy remotesigned -Force#>
-Install-Package -Name docker -ProviderName DockerMsftProvider -Force
+set-executionpolicy remotesigned -Force
+Install-Package -Name docker -ProviderName DockerMsftProvider -Force#>
 
 <# Reboot in 60 seconds #>
 
