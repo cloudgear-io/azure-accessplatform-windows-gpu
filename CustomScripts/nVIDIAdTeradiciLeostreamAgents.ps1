@@ -164,7 +164,7 @@ Stop-Service Docker
 dockerd --unregister-service
 Remove-Item "C:\Program Files\docker" -Force -Recurse
 rm C:\ProgramData\docker\docker.pid#>
-Enable-WindowsOptionalFeature -Online -FeatureName containers -All -NoRestart
+<#Enable-WindowsOptionalFeature -Online -FeatureName containers -All -NoRestart
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart
 Invoke-WebRequest "https://master.dockerproject.org/windows/amd64/docker-$dockerVer.zip" -OutFile "$env:TEMP\docker-$dockerVer.zip" -UseBasicParsing
 Expand-Archive -Path "$env:TEMP\docker-$dockerVer.zip" -DestinationPath $env:ProgramFiles
@@ -174,7 +174,7 @@ $env:path += ";c:\program files\docker"
 [Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Docker", [EnvironmentVariableTarget]::Machine)
 dockerd --register-service
 Start-Service Docker
-Write-Host "Installed Docker for Windows version '$dockerVer' on '$Date'. Welcome !!"
+Write-Host "Installed Docker for Windows version '$dockerVer' on '$Date'. Welcome !!" #>
 
 <# Reboot in 60 seconds #>
 
