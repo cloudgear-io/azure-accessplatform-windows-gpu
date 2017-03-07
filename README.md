@@ -16,7 +16,10 @@
 * All software installers and sample data are in D:\ and system installers like Teradici, Azure NVIDIA GRID Driver installers are in D:\DownloadInstallers
 
 #### Credits
-* The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with certificate force trust - Thanks to [Mathieu Rietman](https://github.com/MathieuRietman)'s [commit on fork for the -f option](https://github.com/MathieuRietman/azure-accessplatform-windows-gpu/commit/a6bc42bc6936a75200f4d968d31ae0de00fe4e97)
+* The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with certificate force trust - Thanks to [Mathieu Rietman](https://github.com/MathieuRietman)'s [commit on fork for the -f option](https://github.com/MathieuRietman/azure-accessplatform-windows-gpu/commit/a6bc42bc6936a75200f4d968d31ae0de00fe4e97).
+
+* The NVFBC stop start with time lag aka [Driver Kick snippet](https://github.com/Azure/azure-accessplatform-windows-gpu/blob/ac12defd132ba0fed76a87e27f6cf2ec8686424a/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L143-L170) via the [specific commit on master](https://github.com/Azure/azure-accessplatform-windows-gpu/commit/ac12defd132ba0fed76a87e27f6cf2ec8686424a) uses [the snippet](https://github.com/teradici/azure-accessplatform-windows-gpu/blob/74df452f8f3275e62b991a39b67000af7aaecf15/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L138-L159) as per specific commit in Teradici Branch on fork of master](https://github.com/teradici/azure-accessplatform-windows-gpu/commit/74df452f8f3275e62b991a39b67000af7aaecf15) by [Peter Longhurst](https://github.com/peterlonghurst).
+
 * Dynamic Disk Selection with take function is as per the [Azure quickstart template](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-dynamic-data-disks-selection)
 
 #### Deploy and Visualize
