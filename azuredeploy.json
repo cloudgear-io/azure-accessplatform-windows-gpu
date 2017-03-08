@@ -15,6 +15,7 @@
       }
     },
     "imagePublisher": {
+      "type": "string",
       "defaultValue": "MicrosoftWindowsServer",
       "allowedValues": [
         "MicrosoftWindowsServer",
@@ -26,6 +27,7 @@
     },
 
     "imageOffer": {
+      "type": "string",
       "defaultValue": "MicrosoftServer",
       "allowedValues": [
         "MicrosoftServer",
