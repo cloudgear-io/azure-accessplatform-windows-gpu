@@ -14,7 +14,7 @@
         "description": "Password for the Virtual Machine."
       }
     },
-    "imagePublisher": {
+    "imagePub": {
       "type": "string",
       "defaultValue": "MicrosoftWindowsServer",
       "allowedValues": [
@@ -26,7 +26,7 @@
       }
     },
 
-    "imageOffer": {
+    "imageOff": {
       "type": "string",
       "defaultValue": "MicrosoftServer",
       "allowedValues": [
@@ -1046,9 +1046,9 @@
         "storageProfile": {
           "imageReference": {
 
-            "publisher": "[parameters('imagePublisher')]",
+            "publisher": "[parameters('imagePub')]",
             "offer": "[parameters('VMSku')]",
-            "sku": "[parameters('imageOffer')]",
+            "sku": "[parameters('imageOff')]",
             "version": "latest"
           },
           "osDisk": {
