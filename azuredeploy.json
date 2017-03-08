@@ -197,6 +197,7 @@
     },
     "license": {
       "type": "string",
+      "defaultValue": "",
       "metadata": {
         "description": "The Teradici Agent license Activation Code trial @ http://connect.teradici.com/cas-trial"
       }
