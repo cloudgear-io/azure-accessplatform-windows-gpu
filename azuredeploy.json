@@ -18,8 +18,7 @@
       "type": "string",
       "defaultValue": "MicrosoftWindowsServer",
       "allowedValues": [
-        "MicrosoftWindowsServer",
-        "MicrosoftVisualStudio"
+        "MicrosoftWindowsServer"
       ],
       "metadata": {
         "description": "Windows image publisher"
@@ -31,7 +30,7 @@
       "defaultValue": "MicrosoftServer",
       "allowedValues": [
         "MicrosoftServer",
-        "Windows"
+        "Windows-HUB"
       ],
       "metadata": {
         "description": "Windows image offer"
@@ -42,7 +41,7 @@
       "defaultValue": "2016-Datacenter",
       "allowedValues": [
         "2016-Datacenter",
-        "Windows-10-N-x64"
+        "Windows-10-HUB"
       ],
       "metadata": {
         "description": "Windows SKUs for GPU"
@@ -53,10 +52,10 @@
       "defaultValue": "latest",
       "allowedValues": [
         "latest",
-        "50.2.2"
+        "10.0.20170228"
       ],
       "metadata": {
-        "description": "Windows SKUs for GPU"
+        "description": "Windows image versions"
       }
     },
     "VMType": {
