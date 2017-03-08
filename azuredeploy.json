@@ -1047,8 +1047,8 @@
           "imageReference": {
 
             "publisher": "[parameters('imagePub')]",
-            "offer": "[parameters('VMSku')]",
-            "sku": "[parameters('imageOff')]",
+            "offer": "[parameters('imageOff')]",
+            "sku": "[parameters('VMSku')]",
             "version": "latest"
           },
           "osDisk": {
