@@ -14,6 +14,27 @@
         "description": "Password for the Virtual Machine."
       }
     },
+    "imagePublisher": {
+      "defaultValue": "MicrosoftWindowsServer",
+      "allowedValues": [
+        "MicrosoftWindowsServer",
+        "MicrosoftVisualStudio"
+      ],
+      "metadata": {
+        "description": "Windows image publisher"
+      }
+    },
+
+    "imageOffer": {
+      "defaultValue": "MicrosoftServer",
+      "allowedValues": [
+        "MicrosoftServer",
+        "windows"
+      ],
+      "metadata": {
+        "description": "Windows image offer"
+      }
+    },
     "VMSku": {
       "type": "string",
       "defaultValue": "2016-Datacenter",
@@ -1022,9 +1043,10 @@
         },
         "storageProfile": {
           "imageReference": {
-            "publisher": "MicrosoftWindowsServer",
-            "offer": "WindowsServer",
-            "sku": "[parameters('VMSku')]",
+
+            "publisher": "[parameters('imagePublisher')]",
+            "offer": "[parameters('VMSku')]",
+            "sku": "[parameters('imageOffer')]",
             "version": "latest"
           },
           "osDisk": {
