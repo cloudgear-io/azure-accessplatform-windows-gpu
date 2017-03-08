@@ -27,9 +27,9 @@
 
     "imageOff": {
       "type": "string",
-      "defaultValue": "MicrosoftServer",
+      "defaultValue": "WindowsServer",
       "allowedValues": [
-        "MicrosoftServer"
+        "WindowsServer"
       ],
       "metadata": {
         "description": "Windows image offer"
