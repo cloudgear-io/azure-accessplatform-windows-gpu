@@ -31,7 +31,7 @@
       "defaultValue": "MicrosoftServer",
       "allowedValues": [
         "MicrosoftServer",
-        "windows"
+        "Windows"
       ],
       "metadata": {
         "description": "Windows image offer"
@@ -42,7 +42,7 @@
       "defaultValue": "2016-Datacenter",
       "allowedValues": [
         "2016-Datacenter",
-        "10-Enterprise-N"
+        "Windows-10-N-x64"
       ],
       "metadata": {
         "description": "Windows SKUs for GPU"
