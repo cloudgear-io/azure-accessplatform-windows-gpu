@@ -18,7 +18,8 @@
       "type": "string",
       "defaultValue": "MicrosoftWindowsServer",
       "allowedValues": [
-        "MicrosoftWindowsServer"
+        "MicrosoftWindowsServer",
+        "MicrosoftVisualStudio"
       ],
       "metadata": {
         "description": "Windows image publisher"
@@ -29,7 +30,8 @@
       "type": "string",
       "defaultValue": "WindowsServer",
       "allowedValues": [
-        "WindowsServer"
+        "WindowsServer",
+        "Windows"
       ],
       "metadata": {
         "description": "Windows image offer"
@@ -39,7 +41,8 @@
       "type": "string",
       "defaultValue": "2016-Datacenter",
       "allowedValues": [
-        "2016-Datacenter"
+        "2016-Datacenter",
+        "Windows-10-N-x64"
       ],
       "metadata": {
         "description": "Windows SKUs for GPU"
