@@ -19,7 +19,7 @@
       "defaultValue": "2016-Datacenter",
       "allowedValues": [
         "2016-Datacenter",
-        "2012-Datacenter"
+        "10-Enterprise-N"
       ],
       "metadata": {
         "description": "Windows SKUs for GPU"
