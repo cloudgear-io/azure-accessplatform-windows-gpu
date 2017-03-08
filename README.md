@@ -10,9 +10,9 @@
 * [Optional Usage of Operational Management Suite](#optional-usage-of-operational-management-suite)
 
 #### Prereqs
-**Obtain a Trial License Activation Code For the Teradici Windows Graphics Agent from [here](http://connect.teradici.com/cas-trial) to put in the template parameter**
+**Obtain a Trial License Activation Code For the Teradici Windows Graphics Agent from [here](http://connect.teradici.com/cas-trial) to put in the template parameter. If that is not put in, Windows Server would be available over [Personal Session Desktop for RDS using RDP 10](https://blogs.technet.microsoft.com/hybridcloudbp/2016/11/15/new-rds-capabilities-in-windows-server-2016-for-service-providers/)**
 
-* NVIDIA GRID 4.1 (369.71) with Azure Driver (Defaulted) and working
+* NVIDIA GRID 4.1 (369.71) with [Azure Driver (Defaulted)](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-n-series-driver-setup) and working
 * All software installers and sample data are in D:\ and system installers like Teradici, Azure NVIDIA GRID Driver installers are in D:\DownloadInstallers
 
 #### Credits
