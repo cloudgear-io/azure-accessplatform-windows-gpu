@@ -48,6 +48,17 @@
         "description": "Windows SKUs for GPU"
       }
     },
+    "imagever": {
+      "type": "string",
+      "defaultValue": "latest",
+      "allowedValues": [
+        "latest",
+        "50.2.2"
+      ],
+      "metadata": {
+        "description": "Windows SKUs for GPU"
+      }
+    },
     "VMType": {
       "type": "string",
       "defaultValue": "Standard_NV24",
@@ -1049,7 +1060,7 @@
             "publisher": "[parameters('imagePub')]",
             "offer": "[parameters('imageOff')]",
             "sku": "[parameters('VMSku')]",
-            "version": "latest"
+            "version": "[parameters('imagever')]"
           },
           "osDisk": {
             "name": "osdisk",
