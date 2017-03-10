@@ -23,7 +23,7 @@
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
-Tip: Map you local drive when using Remote Desktop Client for the easist way to transfer files to your virtual machine. Find more information [here](https://technet.microsoft.com/en-us/library/cc770631(v=ws.11).aspx)
+Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to transfer files to your virtual machine. Find more information [here](https://technet.microsoft.com/en-us/library/cc770631(v=ws.11).aspx)
 
 #### PCoIP with Teradici and NVIDIA GRID Management on Azure for M60 Visualizations
 * PCoIP Client Download for Windows is [here](http://teradici.com/swclient-windows)
