@@ -1,26 +1,19 @@
 # Deploy a Windows NV VM.
 # **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)
 * [Prereqs](#prereqs)
-* [Credits](#credits)
 * [Deploy and Visualize](#deploy-and-visualize)
 * [PCoIP with Teradici and NVIDIA GRID Management on Azure for M60 Visualizations](#pcoip-with-teradici-and-nvidia-grid-management-on-azure-for-m60-visualizations)
 * [MSFT OSCC](#msft-oscc)
+* [Credits](#credits)
 * [Reporting Bugs](#reporting-bugs)
 * [Patches and pull requests](#patches-and-pull-requests)
 * [Optional Usage of Operational Management Suite](#optional-usage-of-operational-management-suite)
 
 #### Prereqs
-**Obtain a Trial License Activation Code For the Teradici Windows Graphics Agent from [here](http://connect.teradici.com/cas-trial) to put in the template parameter. If that is not put in, Windows Server would be available over [Personal Session Desktop for RDS using RDP 10](https://blogs.technet.microsoft.com/hybridcloudbp/2016/11/15/new-rds-capabilities-in-windows-server-2016-for-service-providers/)**
+**Obtain a Trial License Activation Code For the Teradici "Graphics Agent for Windows" from [here](http://connect.teradici.com/cas-trial) to put in the template parameter. If that is not put in, Windows Server would be available over [Personal Session Desktop for RDS using RDP 10](https://blogs.technet.microsoft.com/hybridcloudbp/2016/11/15/new-rds-capabilities-in-windows-server-2016-for-service-providers/)**
 
 * NVIDIA GRID 4.1 (369.71) with [Azure Driver (Defaulted)](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-n-series-driver-setup) and working
 * All software installers and sample data are in D:\ and system installers like Teradici, Azure NVIDIA GRID Driver installers are in D:\DownloadInstallers
-
-#### Credits
-* The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with certificate force trust - Thanks to [Mathieu Rietman](https://github.com/MathieuRietman)'s [commit on fork for the -f option](https://github.com/MathieuRietman/azure-accessplatform-windows-gpu/commit/a6bc42bc6936a75200f4d968d31ae0de00fe4e97).
-
-* The NVFBC stop start with time lag aka [Driver Kick snippet](https://github.com/Azure/azure-accessplatform-windows-gpu/blob/ac12defd132ba0fed76a87e27f6cf2ec8686424a/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L143-L170) via the [specific commit on master](https://github.com/Azure/azure-accessplatform-windows-gpu/commit/ac12defd132ba0fed76a87e27f6cf2ec8686424a) uses [the snippet](https://github.com/teradici/azure-accessplatform-windows-gpu/blob/74df452f8f3275e62b991a39b67000af7aaecf15/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L138-L159) as per [specific commit in Teradici Branch on fork of master](https://github.com/teradici/azure-accessplatform-windows-gpu/commit/74df452f8f3275e62b991a39b67000af7aaecf15) by [Peter Longhurst](https://github.com/peterlonghurst).
-
-* Dynamic Disk Selection with take function is as per the [Azure quickstart template](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-dynamic-data-disks-selection)
 
 #### Deploy and Visualize
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
@@ -29,6 +22,8 @@
 <a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
+
+Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to transfer files to your virtual machine. Find more information [here](https://technet.microsoft.com/en-us/library/cc770631(v=ws.11).aspx)
 
 #### PCoIP with Teradici and NVIDIA GRID Management on Azure for M60 Visualizations
 * PCoIP Client Download for Windows is [here](http://teradici.com/swclient-windows)
@@ -43,6 +38,13 @@
 #### MSFT OSCC
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+#### Credits
+* The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with certificate force trust - Thanks to [Mathieu Rietman](https://github.com/MathieuRietman)'s [commit on fork for the -f option](https://github.com/MathieuRietman/azure-accessplatform-windows-gpu/commit/a6bc42bc6936a75200f4d968d31ae0de00fe4e97).
+
+* The NVFBC stop start with time lag aka [Driver Kick snippet](https://github.com/Azure/azure-accessplatform-windows-gpu/blob/ac12defd132ba0fed76a87e27f6cf2ec8686424a/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L143-L170) via the [specific commit on master](https://github.com/Azure/azure-accessplatform-windows-gpu/commit/ac12defd132ba0fed76a87e27f6cf2ec8686424a) uses [the snippet](https://github.com/teradici/azure-accessplatform-windows-gpu/blob/74df452f8f3275e62b991a39b67000af7aaecf15/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L138-L159) as per [specific commit in Teradici Branch on fork of master](https://github.com/teradici/azure-accessplatform-windows-gpu/commit/74df452f8f3275e62b991a39b67000af7aaecf15) by [Peter Longhurst](https://github.com/peterlonghurst).
+
+* Dynamic Disk Selection with take function is as per the [Azure quickstart template](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-dynamic-data-disks-selection)
 
 #### Reporting bugs
 
