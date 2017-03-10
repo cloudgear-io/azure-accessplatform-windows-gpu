@@ -237,10 +237,10 @@
     },
     "teradiciAgentVer": {
       "type": "string",
-      "defaultValue": "2.8.0.5614",
+      "defaultValue": "2.7.0.4060",
       "allowedValues": [
-        "2.8.0.5614",
-        "2.7.0.4060"
+        "2.7.0.4060",
+        "2.8.0.5614"
       ],
       "metadata": {
         "description": "The Teradici Agent Version"
