@@ -92,18 +92,18 @@ if ($nvidiaazure -match "Yes")
   }
 else
 { 
-  $nvidiaUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}_grid_win10_server2016_64bit_international.exe", $storageAcc, $conName, $nvidiaVer)
-  $nvidiaExeName = [System.IO.Path]::GetFileName($nvidiaUrl)
-  $nvidiaExePath = [System.String]::Format("{0}{1}", $dest, $nvidiaExeName)
-  Write-Host "The NVIDIDA exe download location is '$nvidiaExePath'"
-  Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
-  Write-Host "The NVIDIA exe name is '$nvidiaExeName'"
-  $nvidiaExeGetResp = Invoke-WebRequest $nvidiaUrl -UseBasicParsing
-  [io.file]::WriteAllBytes($nvidiaExePath, $nvidiaExeGetResp.Content)
-  #wget $nvidiaUrl -OutFile $nvidiaExePath
-  & $nvidiaExePath  /s
-  Start-Sleep -s 60
-  $NVIDIAfolder = [System.String]::Format("C:\NVIDIA\{0}", $nvidiaVer)
+	$nvidiaUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}_grid_win10_server2016_64bit_international.exe", $storageAcc, $conName, $nvidiaVer)
+	$nvidiaExeName = [System.IO.Path]::GetFileName($nvidiaUrl)
+	$nvidiaExePath = [System.String]::Format("{0}{1}", $dest, $nvidiaExeName)
+	Write-Host "The NVIDIDA exe download location is '$nvidiaExePath'"
+	Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
+	Write-Host "The NVIDIA exe name is '$nvidiaExeName'"
+	$nvidiaExeGetResp = Invoke-WebRequest $nvidiaUrl -UseBasicParsing
+	[io.file]::WriteAllBytes($nvidiaExePath, $nvidiaExeGetResp.Content)
+	#wget $nvidiaUrl -OutFile $nvidiaExePath
+	& $nvidiaExePath  /s
+	Start-Sleep -s 60
+	$NVIDIAfolder = [System.String]::Format("C:\NVIDIA\{0}", $nvidiaVer)
 }
 
 Write-Host "The NVIDIA Folder name is '$NVIDIAfolder'"
@@ -113,91 +113,91 @@ Set-ExecutionPolicy Unrestricted -force
 Start-Sleep -s 180
 
 if ($license) {
-$teradiciAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/PCoIP_agent_release_installer_{2}_graphics.exe", $storageAcc, $conName, $teradiciAgentVer)
-$teradiciExeName = [System.IO.Path]::GetFileName($teradiciAgentUrl)
-$teradiciExePath = [System.String]::Format("{0}{1}", $dest, $teradiciExeName)
-$leostreamAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/LeostreamAgentSetup{2}.exe", $storageAcc, $conName, $leostreamAgentVer)
-$leostreamExeName = [System.IO.Path]::GetFileName($leostreamAgentUrl)
-$leostreamExePath = [System.String]::Format("{0}{1}", $dest, $leostreamExeName)
-Write-Host "The Teradici Agent exe  Url  is '$teradiciAgentUrl'"
-Write-Host "The Teradici Agent exe name is '$teradiciExeName'"
-Write-Host "The Teradici Agent exe downloaded location is '$teradiciExePath'"
-Write-Host "The Leostream Agent exe Url is '$leostreamAgentUrl'"
-Write-Host "The Leostream Agent exe name is '$leostreamExeName'"
-Write-Host "The Leostream Agent exe downloaded location is '$leostreamExePath'"
-$teradiciAgentUrlGetResp = Invoke-WebRequest $teradiciAgentUrl -UseBasicParsing
-[io.file]::WriteAllBytes($teradiciExePath, $teradiciAgentUrlGetResp.Content)
-$leostreamAgentUrlGetResp = Invoke-WebRequest $leostreamAgentUrl -UseBasicParsing
-[io.file]::WriteAllBytes($leostreamExePath, $leostreamAgentUrlGetResp.Content)
-#wget $teradiciAgentUrl -OutFile $teradiciExePath
-#wget $leostreamAgentUrl -OutFile $leostreamExePath
-& $teradiciExePath /S /NoPostReboot
-Start-Sleep -s 90 
-Write-Host "teradiciagent install over"
-cd 'C:\Program Files (x86)\Teradici\PCoIP Agent\licenses\'
-Write-Host "pre-activate"
-.\appactutil.exe -served -comm soap -commServer https://teradici.flexnetoperations.com/control/trdi/ActivationService -entitlementID $license
-Write-Host "activation over"
-if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*')) -and ($nvidiaVer -match "369.71"))
-#if (($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*'))
-#if ($teradiciAgentVer -match "2.7.0.4060")
-{
-  IF(!(Test-Path $registryPath))
-      {
-      New-Item -Path $registryPath -Force | Out-Null
-      New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
-      }
-  ELSE 
-      {
-      New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
-      }
-<#net stop nvsvc
-Write-Host "Stopped NVIDIA Display Driver"
-Start-Sleep -s 240
-net start nvsvc
-Write-Host "Starting NVIDIA Display Driver"#>
+	$teradiciAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/PCoIP_agent_release_installer_{2}_graphics.exe", $storageAcc, $conName, $teradiciAgentVer)
+	$teradiciExeName = [System.IO.Path]::GetFileName($teradiciAgentUrl)
+	$teradiciExePath = [System.String]::Format("{0}{1}", $dest, $teradiciExeName)
+	$leostreamAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/LeostreamAgentSetup{2}.exe", $storageAcc, $conName, $leostreamAgentVer)
+	$leostreamExeName = [System.IO.Path]::GetFileName($leostreamAgentUrl)
+	$leostreamExePath = [System.String]::Format("{0}{1}", $dest, $leostreamExeName)
+	Write-Host "The Teradici Agent exe  Url  is '$teradiciAgentUrl'"
+	Write-Host "The Teradici Agent exe name is '$teradiciExeName'"
+	Write-Host "The Teradici Agent exe downloaded location is '$teradiciExePath'"
+	Write-Host "The Leostream Agent exe Url is '$leostreamAgentUrl'"
+	Write-Host "The Leostream Agent exe name is '$leostreamExeName'"
+	Write-Host "The Leostream Agent exe downloaded location is '$leostreamExePath'"
+	$teradiciAgentUrlGetResp = Invoke-WebRequest $teradiciAgentUrl -UseBasicParsing
+	[io.file]::WriteAllBytes($teradiciExePath, $teradiciAgentUrlGetResp.Content)
+	$leostreamAgentUrlGetResp = Invoke-WebRequest $leostreamAgentUrl -UseBasicParsing
+	[io.file]::WriteAllBytes($leostreamExePath, $leostreamAgentUrlGetResp.Content)
+	#wget $teradiciAgentUrl -OutFile $teradiciExePath
+	#wget $leostreamAgentUrl -OutFile $leostreamExePath
+	& $teradiciExePath /S /NoPostReboot
+	Start-Sleep -s 90 
+	Write-Host "teradiciagent install over"
+	cd 'C:\Program Files (x86)\Teradici\PCoIP Agent\licenses\'
+	Write-Host "pre-activate"
+	.\appactutil.exe -served -comm soap -commServer https://teradici.flexnetoperations.com/control/trdi/ActivationService -entitlementID $license
+	Write-Host "activation over"
+	if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*')) -and ($nvidiaVer -match "369.71"))
+	#if (($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*'))
+	#if ($teradiciAgentVer -match "2.7.0.4060")
+	{
+	  IF(!(Test-Path $registryPath))
+		  {
+		  New-Item -Path $registryPath -Force | Out-Null
+		  New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
+		  }
+	  ELSE 
+		  {
+		  New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
+		  }
+	<#net stop nvsvc
+	Write-Host "Stopped NVIDIA Display Driver"
+	Start-Sleep -s 240
+	net start nvsvc
+	Write-Host "Starting NVIDIA Display Driver"#>
 
-<# NVIDIA driver kicking Only needed for 369.71 driver #>
-#if ($nvidiaVer -match "369.71")
+	<# NVIDIA driver kicking Only needed for 369.71 driver #>
+	#if ($nvidiaVer -match "369.71")
 
-    Write-Host "Driver kick needed for this NVIDIA graphics driver, kicking now..."
-    Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
+		Write-Host "Driver kick needed for this NVIDIA graphics driver, kicking now..."
+		Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
     
-    Write-Host "Stopping NVIDIA Display Driver"
-    net stop nvsvc
-    Start-Sleep -s 90
+		Write-Host "Stopping NVIDIA Display Driver"
+		net stop nvsvc
+		Start-Sleep -s 90
     
-    Write-Host "Disabling NVFBC capture"
-    ./NvFBCEnable -disable
-    Start-Sleep -s 90
+		Write-Host "Disabling NVFBC capture"
+		./NvFBCEnable -disable
+		Start-Sleep -s 90
     
-    Write-Host "Enabling NVFBC capture"
-    ./NvFBCEnable -enable
-    Start-Sleep -s 90
+		Write-Host "Enabling NVFBC capture"
+		./NvFBCEnable -enable
+		Start-Sleep -s 90
     
-    Write-Host "Starting NVIDIA Display Driver"
-    net start nvsvc
-    Start-Sleep -s 90
-}
-else
-{ 
-  Write-Host  "No Registry entry required ."
-}
+		Write-Host "Starting NVIDIA Display Driver"
+		net start nvsvc
+		Start-Sleep -s 90
+	}
+	else
+	{ 
+		Write-Host  "No Registry entry required ."
+	}
 
 }
 
 
 <#OMS Hook#>
 if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
-  $omsAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/MMASetup-AMD64.exe", $storageAcc, $conName)
-  $omsExeName = [System.IO.Path]::GetFileName($omsAgentUrl)
-  $omsExePath = [System.String]::Format("{0}{1}", $dest, $omsExeName)
-  $omsAgentUrlGetResp = Invoke-WebRequest $omsAgentUrl -UseBasicParsing
-  [io.file]::WriteAllBytes($omsExePath, $omsAgentUrlGetResp.Content)
-  #wget $omsAgentUrl -OutFile $omsExePath
-  Set-Location $dest
-  Set-ExecutionPolicy Unrestricted -force
-  .\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
+	$omsAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/MMASetup-AMD64.exe", $storageAcc, $conName)
+	$omsExeName = [System.IO.Path]::GetFileName($omsAgentUrl)
+	$omsExePath = [System.String]::Format("{0}{1}", $dest, $omsExeName)
+	$omsAgentUrlGetResp = Invoke-WebRequest $omsAgentUrl -UseBasicParsing
+	[io.file]::WriteAllBytes($omsExePath, $omsAgentUrlGetResp.Content)
+	#wget $omsAgentUrl -OutFile $omsExePath
+	Set-Location $dest
+	Set-ExecutionPolicy Unrestricted -force
+	.\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
 }
 
 <#Install Docker EE for Windows Server 2016>
