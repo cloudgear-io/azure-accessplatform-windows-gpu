@@ -200,7 +200,7 @@ if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
   .\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
 }
 
-<#Install Docker EE for Windows Server 2016#>
+<#Install Docker EE for Windows Server 2016>
 Install-PackageProvider -Name NuGet -MinimumVersion $nuget4dockerVer -Force
 Install-Module -Name DockerMsftProvider -Repository PSGallery -Force
 #set-executionpolicy remotesigned -Force
