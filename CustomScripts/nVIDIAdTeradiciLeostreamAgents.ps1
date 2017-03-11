@@ -138,8 +138,8 @@ cd 'C:\Program Files (x86)\Teradici\PCoIP Agent\licenses\'
 Write-Host "pre-activate"
 .\appactutil.exe -served -comm soap -commServer https://teradici.flexnetoperations.com/control/trdi/ActivationService -entitlementID $license
 Write-Host "activation over"
-
-if (($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*'))
+if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*')) -and ($nvidiaVer -match "369.71"))
+#if (($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*'))
 #if ($teradiciAgentVer -match "2.7.0.4060")
 {
   IF(!(Test-Path $registryPath))
@@ -165,8 +165,7 @@ Write-Host "Starting NVIDIA Display Driver"#>
 
 <# NVIDIA driver kicking Only needed for 369.71 driver #>
 #if ($nvidiaVer -match "369.71")
-if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*')) -and ($nvidiaVer -match "369.71"))
-{
+
     Write-Host "Driver kick needed for this NVIDIA graphics driver, kicking now..."
     Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
     
@@ -185,7 +184,7 @@ if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*
     Write-Host "Starting NVIDIA Display Driver"
     net start nvsvc
     Start-Sleep -s 90
-}
+
 }
 
 
