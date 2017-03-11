@@ -274,7 +274,7 @@
     },
     "NuGetminVer4DockerEE": {
       "type": "string",
-      "defaultValue": "2.8.5.201",
+      "defaultValue": "2.8.5.208",
       "metadata": {
         "description": "NuGet minimum version requirement- Docker 17.03.0-ee for Windows Server 2016 DC"
       }
