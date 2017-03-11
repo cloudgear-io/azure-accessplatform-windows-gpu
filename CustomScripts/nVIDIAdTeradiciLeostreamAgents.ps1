@@ -131,8 +131,6 @@ $leostreamAgentUrlGetResp = Invoke-WebRequest $leostreamAgentUrl -UseBasicParsin
 [io.file]::WriteAllBytes($leostreamExePath, $leostreamAgentUrlGetResp.Content)
 #wget $teradiciAgentUrl -OutFile $teradiciExePath
 #wget $leostreamAgentUrl -OutFile $leostreamExePath
-Start-Sleep -s 360
-
 & $teradiciExePath /S /NoPostReboot
 Start-Sleep -s 90 
 Write-Host "teradiciagent install over"
@@ -158,10 +156,6 @@ else
 { 
   Write-Host  "No Registry entry required ."
 }
-
-}
-
-
 
 <#net stop nvsvc
 Write-Host "Stopped NVIDIA Display Driver"
@@ -192,16 +186,8 @@ if (($teradiciAgentVer -match "2.7.0.4060") -and ($nvidiaVer -match "369.71"))
     net start nvsvc
     Start-Sleep -s 90
 }
-elseif ($nvidiaVer -match "369.71")
-{
-    Write-Host "Stopping NVIDIA Display Driver"
-    net stop nvsvc
-    Start-Sleep -s 200
-    
-    Write-Host "Starting NVIDIA Display Driver"
-    net start nvsvc
-    Start-Sleep -s 90
 }
+
 
 <#OMS Hook#>
 if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
