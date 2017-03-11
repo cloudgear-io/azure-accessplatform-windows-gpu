@@ -151,12 +151,6 @@ if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*
       {
       New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
       }
-}
-else
-{ 
-  Write-Host  "No Registry entry required ."
-}
-
 <#net stop nvsvc
 Write-Host "Stopped NVIDIA Display Driver"
 Start-Sleep -s 240
@@ -184,6 +178,11 @@ Write-Host "Starting NVIDIA Display Driver"#>
     Write-Host "Starting NVIDIA Display Driver"
     net start nvsvc
     Start-Sleep -s 90
+}
+else
+{ 
+  Write-Host  "No Registry entry required ."
+}
 
 }
 
