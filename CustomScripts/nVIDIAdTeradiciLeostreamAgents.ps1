@@ -165,7 +165,7 @@ Write-Host "Starting NVIDIA Display Driver"#>
 
 <# NVIDIA driver kicking Only needed for 369.71 driver #>
 #if ($nvidiaVer -match "369.71")
-if (($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*') -and ($nvidiaVer -match "369.71"))
+if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*')) -and ($nvidiaVer -match "369.71"))
 {
     Write-Host "Driver kick needed for this NVIDIA graphics driver, kicking now..."
     Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
