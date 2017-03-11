@@ -139,8 +139,9 @@ if ($license) {
 	.\appactutil.exe -served -comm soap -commServer https://teradici.flexnetoperations.com/control/trdi/ActivationService -entitlementID $license
 	Write-Host "activation over"
 	if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*')) -and ($nvidiaVer -match "369.71"))
+	{
 	#if (($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*'))
-	#if ($teradiciAgentVer -match "2.7.0.4060")
+	if ($teradiciAgentVer -match "2.7.0.4060")
 	{
 	  IF(!(Test-Path $registryPath))
 		  {
@@ -151,6 +152,7 @@ if ($license) {
 		  {
 		  New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
 		  }
+         }
 	<#net stop nvsvc
 	Write-Host "Stopped NVIDIA Display Driver"
 	Start-Sleep -s 240
