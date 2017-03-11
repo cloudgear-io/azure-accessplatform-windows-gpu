@@ -12,7 +12,7 @@
 #### Prereqs
 **Obtain a Trial License Activation Code For the Teradici "Graphics Agent for Windows" from [here](http://connect.teradici.com/cas-trial) to put in the template parameter. If that is not put in, Windows Server would be available over [Personal Session Desktop for RDS using RDP 10](https://blogs.technet.microsoft.com/hybridcloudbp/2016/11/15/new-rds-capabilities-in-windows-server-2016-for-service-providers/)**
 
-**Please download PCoIP Software Clients 1.11 (Beta) for Windows from [here (https://techsupport.teradici.com/link/portal/15134/15164/Download/2852) to access over PCoIP**
+**Please download PCoIP Software Clients 1.11 (Beta) for Windows from [here] (https://techsupport.teradici.com/link/portal/15134/15164/Download/2852) to access over PCoIP**
 
 * NVIDIA GRID 4.1 (369.71) with [Azure Driver (Defaulted)](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-n-series-driver-setup) and working
 * All software installers and sample data are in D:\ and system installers like Teradici, Azure NVIDIA GRID Driver installers are in D:\DownloadInstallers
@@ -35,8 +35,8 @@ Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to tr
 * nView needs to be enabled manually. [User Guide](http://www.nvidia.com/content/quadro/pdf/nView-user-guide.pdf)
 * Collection of the user dumps for the NVIDIA Display Driver 369.71  from within the VM on Display Driver Crash if occurs.
  * Details are [here](http://nvidia.custhelp.com/app/answers/detail/a_id/3335/~/tdr-(timeout-detection-and-recovery)-and-collecting-dump-files) 
-* PCoIP RC Agent Log Collection (2.7.0.4060) from the Teradici System Tray (right click Teradici Icon on System Tray) and collect Agent Logs (from the pop-up).
- * PCoIP RC Agent 2.7.0.4060 uses Multiple PCoIP encoding.
+* PCoIP Graphics Agent for Windows Log Collection (2.8.0.5614 (2.8 Beta Presently) and 2.7.0.4060) from the Teradici System Tray (right click Teradici Icon on System Tray) and collect Agent Logs (from the pop-up).
+ * PCoIP Graphics Agent for Windows 2.8.0.5614 (2.8 Beta Presently) and 2.7.0.4060  uses Multiple PCoIP encoding.
 * The PCOIP Agent Logs (v1.10.*) from the Office Client machine of the end-user from <code>C:\Users\user_name\AppData\Local\Teradici\PCoIPClient\logs</code>
 
 #### MSFT OSCC
