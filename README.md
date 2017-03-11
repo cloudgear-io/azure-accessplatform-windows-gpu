@@ -17,7 +17,8 @@
 * NVIDIA GRID 4.1 (369.71) with [Azure Driver (Defaulted)](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-n-series-driver-setup) and working
 * All software installers and sample data are in D:\ and system installers like Teradici, Azure NVIDIA GRID Driver installers are in D:\DownloadInstallers
 
-* Latest  [Teradici Cloud Access Software 2.8.0 (Beta) Agent- Graphics Edition for Windows](https://techsupport.teradici.com/link/portal/15134/15164/Download/2870). Includes the latest client.
+* Latest  [Teradici Cloud Access Software 2.8.0 (Beta) Agent- Graphics Edition for Windows](https://techsupport.teradici.com/link/portal/15134/15164/Download/2870). Includes the latest client PCoIP Software Clients 1.11 (Beta)
+for Windows.
 
 #### Deploy and Visualize
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
@@ -30,7 +31,7 @@
 Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to transfer files to your virtual machine. Find more information [here](https://technet.microsoft.com/en-us/library/cc770631(v=ws.11).aspx)
 
 #### PCoIP with Teradici and NVIDIA GRID Management on Azure for M60 Visualizations
-* PCoIP Client Download for Windows is [here](http://teradici.com/swclient-windows)
+
 * For GRID server interfaces for GPU management, please view [the grid software management sdk user guide](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/367.43-369.17-grid-software-management-sdk-user-guide.pdf)
 * nView needs to be enabled manually. [User Guide](http://www.nvidia.com/content/quadro/pdf/nView-user-guide.pdf)
 * Collection of the user dumps for the NVIDIA Display Driver 369.71  from within the VM on Display Driver Crash if occurs.
