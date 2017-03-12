@@ -153,11 +153,15 @@ if ($license) {
 			  New-ItemProperty -Path $registryPath -Name $name -Value $value -PropertyType DWORD -Force | Out-Null
 			  }
 		 }
+		 else
+		 { 
+			Write-Host  "Agent 2.8 - No Registry entry required"
+		 }
 
 			<# NVIDIA driver kicking Only needed for 369.71 driver #>
 			#if ($nvidiaVer -match "369.71")
 
-			Write-Host "Driver kick needed for this NVIDIA graphics driver, kicking now..."
+			Write-Host "Driver kick needed for this NVIDIA graphics driver 369.71, kicking now..."
 			Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
     
 			Write-Host "Stopping NVIDIA Display Driver"
