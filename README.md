@@ -1,5 +1,7 @@
 # Deploy a Windows NV VM.
+
 # **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)
+
 * [Prereqs](#prereqs)
 * [Deploy and Visualize](#deploy-and-visualize)
 * [PCoIP with Teradici and NVIDIA GRID Management on Azure for M60 Visualizations](#pcoip-with-teradici-and-nvidia-grid-management-on-azure-for-m60-visualizations)
