@@ -1,3 +1,5 @@
+![azureportaldeploy](https://blogs.nvidia.com/wp-content/uploads/2016/08/windows_azure_nvidia.jpg)
+
 # Deploy a Windows NV VM.
 
 # **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)
