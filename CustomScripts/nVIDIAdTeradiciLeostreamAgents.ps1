@@ -234,5 +234,5 @@ Install-Package -Name docker -ProviderName DockerMsftProvider -Force#>
 
 <# Reboot in 60 seconds #>
 
-C:\WINDOWS\system32\shutdown.exe -r -f -t 60
+C:\WINDOWS\system32\shutdown.exe -r -f -t 120
 Write-Host "end script"
