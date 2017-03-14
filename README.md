@@ -86,5 +86,5 @@ Patches can be submitted as GitHub pull requests. If using GitHub please make su
 ####  Manual Install of OpendTect for Sanity
 * On using default options of the template, OpendTect Installer 6.5 would be available in D:\DownloadInstallers folder of the NV
 * On using default options of the template, D:\opendtect empty folder would be available as OpendTect Installation location for manual install.
- * D: Drive of the NV is a PCIe NVM SSD and hence usage of the drive is preferred for software.
-* Post-installation of ALL plugins and successfully for OpendTect in D:\OpendTect, **ONLY** zip file survey option should be chosen via OpendTect startup and the zip file for Netherlands North F3 Data is available [here](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/opendTect/F3_Demo_2016_training_v6.zip). It should be downloaded manually from browser in the NV prior to OpendTect manual installation.
+ * D: Drive of the NV is a NVMe SSD over PCIe interface and hence usage of the drive is preferred for software.
+* Post-installation of ALL plugins and successfully for OpendTect in D:\OpendTect, **ONLY** zip file survey option should be chosen via OpendTect startup and the zip file for Netherlands North F3 Data should be downloaded directly from VM browser from [here](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/opendTect/F3_Demo_2016_training_v6.zip). It should be downloaded manually from browser in the NV prior to OpendTect manual installation.
