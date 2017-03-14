@@ -26,6 +26,10 @@
 * Latest  [Teradici Cloud Access Software 2.8.0 (Beta) Agent- Graphics Edition for Windows](https://techsupport.teradici.com/link/portal/15134/15164/Download/2870). Includes the latest client PCoIP Software Clients 1.11 (Beta)
 for Windows.
 
+* [Manual Install of OpendTect for Sanity](#manual-install-of-opendtect-for-sanity)
+
+* nView needs to be enabled manually. [User Guide](http://www.nvidia.com/content/quadro/pdf/nView-user-guide.pdf)
+
 #### Deploy and Visualize
 <a href="https://preview.portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
