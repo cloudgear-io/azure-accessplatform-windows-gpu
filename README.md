@@ -7,12 +7,12 @@
 * [Prereqs](#prereqs)
 * [Deploy and Visualize](#deploy-and-visualize)
 * [PCoIP with Teradici and NVIDIA GRID Management on Azure for M60 Visualizations](#pcoip-with-teradici-and-nvidia-grid-management-on-azure-for-m60-visualizations)
+* [Optional Usage of Operational Management Suite](#optional-usage-of-operational-management-suite)
+* [Manual Install of OpendTect for Sanity](#manual-install-of-opendtect-for-sanity)
 * [MSFT OSCC](#msft-oscc)
 * [Credits](#credits)
 * [Reporting Bugs](#reporting-bugs)
 * [Patches and pull requests](#patches-and-pull-requests)
-* [Optional Usage of Operational Management Suite](#optional-usage-of-operational-management-suite)
-* [Manual Install of OpendTect for Sanity](#manual-install-of-opendtect-for-sanity)
 
 #### Prereqs
 **Obtain a Trial License Activation Code For the Teradici "Graphics Agent for Windows" from [here](http://connect.teradici.com/cas-trial) to put in the template parameter. If that is not put in, Windows Server would be available over [Personal Session Desktop for RDS using RDP 10](https://blogs.technet.microsoft.com/hybridcloudbp/2016/11/15/new-rds-capabilities-in-windows-server-2016-for-service-providers/)**
@@ -46,25 +46,6 @@ Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to tr
  * PCoIP Graphics Agent for Windows 2.8.0.5614 (2.8 Beta Presently) and 2.7.0.4060  uses Multiple PCoIP encoding.
 * The PCOIP Agent Logs  [v1.11 ~Beta]((https://techsupport.teradici.com/link/portal/15134/15164/Download/2852)) from the Office Client machine of the end-user from <code>C:\Users\user_name\AppData\Local\Teradici\PCoIPClient\logs</code>
 
-#### MSFT OSCC
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-#### Credits
-* The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with certificate force trust - Thanks to [Mathieu Rietman](https://github.com/MathieuRietman)'s [commit on fork for the -f option](https://github.com/MathieuRietman/azure-accessplatform-windows-gpu/commit/a6bc42bc6936a75200f4d968d31ae0de00fe4e97).
-
-* The NVFBC stop start with time lag aka [Driver Kick snippet](https://github.com/Azure/azure-accessplatform-windows-gpu/blob/7584b0b962c2e0d21501685589e05240d2ee2448/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L161-L181) uses [the snippet](https://github.com/teradici/azure-accessplatform-windows-gpu/blob/74df452f8f3275e62b991a39b67000af7aaecf15/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L138-L159) as per [specific commit in Teradici Branch on fork of master](https://github.com/teradici/azure-accessplatform-windows-gpu/commit/74df452f8f3275e62b991a39b67000af7aaecf15) by [Peter Longhurst](https://github.com/peterlonghurst).
-
-* Dynamic Disk Selection with take function is as per the [Azure quickstart template](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-dynamic-data-disks-selection)
-
-#### Reporting bugs
-
-Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://github.com/Azure/azure-accessplatform-windows-gpu/issues)
-
-#### Patches and pull requests
-
-Patches can be submitted as GitHub pull requests. If using GitHub please make sure your branch applies to the current master as a 'fast forward' merge (i.e. without creating a merge commit). Use the `git rebase` command to update your branch to the current master if necessary.
-
 #### Optional Usage of Operational Management Suite
 **OMS Setup (for mostly Security, compliance and backup in this case) is optional and the OMS Workspace Id and OMS Workspace Key can either be kept blank or populated post the steps below.**
 
@@ -88,3 +69,22 @@ Patches can be submitted as GitHub pull requests. If using GitHub please make su
 * On using default options of the template, **D:\opendtect empty folder would be available as OpendTect Installation location for manual install**.
  * D: Drive of the NV is a NVMe SSD over PCIe interface and hence usage of the drive is preferred for software.
 * Post-installation of ALL features of OpendTect Pro and successfully in D:\OpendTect, **ONLY** zip file survey option should be chosen via OpendTect startup and **the zip file for Netherlands North F3 Data should be downloaded directly from VM browser from [here](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/opendTect/F3_Demo_2016_training_v6.zip). It should be downloaded manually from browser in the NV prior to OpendTect manual installation.**
+
+#### MSFT OSCC
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+
+#### Credits
+* The NVIDIA GRID 4.1 (369.71) with "Azure" Driver silent install works with certificate force trust - Thanks to [Mathieu Rietman](https://github.com/MathieuRietman)'s [commit on fork for the -f option](https://github.com/MathieuRietman/azure-accessplatform-windows-gpu/commit/a6bc42bc6936a75200f4d968d31ae0de00fe4e97).
+
+* The NVFBC stop start with time lag aka [Driver Kick snippet](https://github.com/Azure/azure-accessplatform-windows-gpu/blob/7584b0b962c2e0d21501685589e05240d2ee2448/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L161-L181) uses [the snippet](https://github.com/teradici/azure-accessplatform-windows-gpu/blob/74df452f8f3275e62b991a39b67000af7aaecf15/CustomScripts/nVIDIAdTeradiciLeostreamAgents.ps1#L138-L159) as per [specific commit in Teradici Branch on fork of master](https://github.com/teradici/azure-accessplatform-windows-gpu/commit/74df452f8f3275e62b991a39b67000af7aaecf15) by [Peter Longhurst](https://github.com/peterlonghurst).
+
+* Dynamic Disk Selection with take function is as per the [Azure quickstart template](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-dynamic-data-disks-selection)
+
+#### Reporting bugs
+
+Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://github.com/Azure/azure-accessplatform-windows-gpu/issues)
+
+#### Patches and pull requests
+
+Patches can be submitted as GitHub pull requests. If using GitHub please make sure your branch applies to the current master as a 'fast forward' merge (i.e. without creating a merge commit). Use the `git rebase` command to update your branch to the current master if necessary.
