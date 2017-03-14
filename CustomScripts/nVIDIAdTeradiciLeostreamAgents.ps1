@@ -199,7 +199,7 @@ if ($license) {
     
 			Write-Host "Disabling NVFBC capture"
 			./NvFBCEnable -disable
-			Start-Sleep -s 90
+			Start-Sleep -s 480
     
 			Write-Host "Enabling NVFBC capture"
 			./NvFBCEnable -enable
@@ -207,7 +207,7 @@ if ($license) {
     
 			Write-Host "Starting NVIDIA Display Driver"
 			net start nvsvc
-			Start-Sleep -s 90
+			Start-Sleep -s 480
 	}
 
 }
