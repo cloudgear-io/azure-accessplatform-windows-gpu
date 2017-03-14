@@ -187,7 +187,11 @@
     },
     "nvidiaVer": {
       "type": "string",
-      "defaultValue": "369.71",
+      "defaultValue": "369.95",
+      "allowedValues": [
+        "369.95",
+        "369.71"
+      ],
       "metadata": {
         "description": "The NVIDIA Version"
       }
