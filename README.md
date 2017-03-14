@@ -18,8 +18,8 @@
 
 **Please download PCoIP Software Clients 1.11 (Beta) for Windows from
   [here](https://techsupport.teradici.com/link/portal/15134/15164/Download/2852) to access over PCoIP**
-
-* NVIDIA GRID 4.1 (369.71) with [Azure Driver (Defaulted)](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-n-series-driver-setup) and working
+* NVIDIA GRID 4.2 (369.95) with [NVIDIA GRID 4.2 latest Driver (Defaulted)](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/369.95_grid_win10_server2016_64bit_international.exe) and working.
+* NVIDIA GRID 4.1 (369.71) with [Azure NVIDIA GRID Driver (non-defaulted)](https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-n-series-driver-setup) and working
 * All software installers and sample data are in D:\ and system installers like Teradici, Azure NVIDIA GRID Driver installers are in D:\DownloadInstallers
 
 * Latest  [Teradici Cloud Access Software 2.8.0 (Beta) Agent- Graphics Edition for Windows](https://techsupport.teradici.com/link/portal/15134/15164/Download/2870). Includes the latest client PCoIP Software Clients 1.11 (Beta)
