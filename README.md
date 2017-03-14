@@ -1,4 +1,5 @@
-![Azure icon](https://imagine.microsoft.com/Content/Images/favicon.ico)      ![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)      ![nvidia icon](https://cdn-img.easyicon.net/png/5552/555272.gif)
+<div style="text-align:center"><img src ="https://imagine.microsoft.com/Content/Images/favicon.ico" /><img src ="ttp://img.informer.com/icons/png/128/5487/5487453.png" /><img src ="https://cdn-img.easyicon.net/png/5552/555272.gif" /></div>
+![Azure icon](https://imagine.microsoft.com/Content/Images/favicon.ico)![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)![nvidia icon](https://cdn-img.easyicon.net/png/5552/555272.gif)
 
 # Deploy a Windows NV VM.
 
