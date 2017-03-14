@@ -39,7 +39,7 @@ Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to tr
 
 * For GRID server interfaces for GPU management, please view [the grid software management sdk user guide](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/367.43-369.17-grid-software-management-sdk-user-guide.pdf)
 * nView needs to be enabled manually. [User Guide](http://www.nvidia.com/content/quadro/pdf/nView-user-guide.pdf)
-* Collection of the user dumps for the NVIDIA Display Driver 369.71  from within the VM on Display Driver Crash if occurs.
+* Collection of the user dumps for the NVIDIA Display Driver 369.95 or 369.71  from within the VM on Display Driver Crash if occurs.
  * Details are [here](http://nvidia.custhelp.com/app/answers/detail/a_id/3335/~/tdr-(timeout-detection-and-recovery)-and-collecting-dump-files) 
 * PCoIP Graphics Agent for Windows Log Collection (2.8.0.5614 (2.8 Beta Presently) and 2.7.0.4060) from the Teradici System Tray (right click Teradici Icon on System Tray) and collect Agent Logs (from the pop-up).
  * PCoIP Graphics Agent for Windows 2.8.0.5614 (2.8 Beta Presently) and 2.7.0.4060  uses Multiple PCoIP encoding.
