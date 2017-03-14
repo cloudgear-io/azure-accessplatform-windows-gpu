@@ -169,7 +169,7 @@ if ($license) {
     
 			Write-Host "Stopping NVIDIA Display Driver"
 			net stop nvsvc
-			Start-Sleep -s 90
+			Start-Sleep -s 90#>
     
 			Write-Host "Disabling NVFBC capture"
 			./NvFBCEnable -disable
@@ -193,9 +193,9 @@ if ($license) {
 			Write-Host "Driver kick needed for this NVIDIA graphics driver 369.71, kicking now..."
 			Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
     
-			Write-Host "Stopping NVIDIA Display Driver"
+			<#Write-Host "Stopping NVIDIA Display Driver"
 			net stop nvsvc
-			Start-Sleep -s 90
+			Start-Sleep -s 90#>
     
 			Write-Host "Disabling NVFBC capture"
 			./NvFBCEnable -disable
@@ -205,9 +205,9 @@ if ($license) {
 			./NvFBCEnable -enable
 			Start-Sleep -s 90
     
-			Write-Host "Starting NVIDIA Display Driver"
+			<#Write-Host "Starting NVIDIA Display Driver"
 			net start nvsvc
-			Start-Sleep -s 480
+			Start-Sleep -s 480#>
 	}
 
 }
