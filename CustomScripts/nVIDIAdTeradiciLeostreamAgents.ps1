@@ -113,7 +113,7 @@ Write-Host "The NVIDIA Folder name is '$NVIDIAfolder'"
 Set-Location $NVIDIAfolder
 Set-ExecutionPolicy Unrestricted -force
 .\setup.exe -s -noreboot -clean
-Start-Sleep -s 180
+Start-Sleep -s 360
 
 if ($license) {
 	$teradiciAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/PCoIP_agent_release_installer_{2}_graphics.exe", $storageAcc, $conName, $teradiciAgentVer)
