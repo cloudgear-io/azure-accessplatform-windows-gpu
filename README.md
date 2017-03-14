@@ -12,6 +12,7 @@
 * [Reporting Bugs](#reporting-bugs)
 * [Patches and pull requests](#patches-and-pull-requests)
 * [Optional Usage of Operational Management Suite](#optional-usage-of-operational-management-suite)
+* [Manual Install of OpendTect for Sanity](#manual-install-of-opendtect-for-sanity)
 
 #### Prereqs
 **Obtain a Trial License Activation Code For the Teradici "Graphics Agent for Windows" from [here](http://connect.teradici.com/cas-trial) to put in the template parameter. If that is not put in, Windows Server would be available over [Personal Session Desktop for RDS using RDP 10](https://blogs.technet.microsoft.com/hybridcloudbp/2016/11/15/new-rds-capabilities-in-windows-server-2016-for-service-providers/)**
@@ -73,7 +74,7 @@ Patches can be submitted as GitHub pull requests. If using GitHub please make su
 * Link your Subscription to the OMS Portal.
 * Depending upon the region, a Resource Group would be created in the Sunscription like "mms-weu" for "West Europe" and the named OMS Workspace with portal details etc. would be created in the Resource Group.
 * login to https://<<OMSWorkspaceName>>.portal.mms.microsoft.com 
-* Add The solutions "Agent Health", "Backup", "Security & Compliance", "Activity Log Analytics" and "Protection & Recovery"  Solutions from the "Solutions Gallery" of the OMS Portal of the workspace.
+* Add The solutions "Agent Health", "Backup", "Security & Compliance", "Activity Log Analytics" and "Protection & Recovery" Solutions from the "Solutions Gallery" of the OMS Portal of the workspace.
 * Logon to the OMS Workspace and Go to -> Settings -> "Connected Sources"  -> "Windows Servers" -> Obtain the Workspace ID like <code>ba1e3f33-648d-40a1-9c70-3d8920834669</code> and the "Primary and/or Secondary Key" like <code>xkifyDr2s4L964a/Skq58ItA/M1aMnmumxmgdYliYcC2IPHBPphJgmPQrKsukSXGWtbrgkV2j1nHmU0j8I8vVQ==</code>
 * While Deploying the Template just the WorkspaceID and the Key are to be mentioned and all will be registered. **The Windows Agent is already available in the VM once WorkspaceID and Key are put in during Template deployment**.
 
@@ -81,3 +82,9 @@ Patches can be submitted as GitHub pull requests. If using GitHub please make su
 
 * Then one can login to https://<<OMSWorkspaceName>>.portal.mms.microsoft.com  and monitor VM and use Log Analytics and if Required perform automated backups using the corresponding Solutions for OMS.
  * Or if the OMS Workspace and the Machines are in the same subscription, one can just connect the VM sources manually to the OMS Workspace as Data Sources.
+
+####  Manual Install of OpendTect for Sanity
+* On using default options of the template, OpendTect Installer 6.5 would be available in D:\DownloadInstallers folder of the NV
+* On using default options of the template, D:\opendtect empty folder would be available as OpendTect Installation location for manual install.
+ * D: Drive of the NV is a PCIe NVM SSD and hence usage of the drive is preferred for software.
+* Post-installation of ALL plugins and successfully for OpendTect in D:\OpendTect, **ONLY** zip file survey option should be chosen via OpendTect startup and the zip file for Netherlands North F3 Data is available [here](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/opendTect/F3_Demo_2016_training_v6.zip). It should be downloaded manually from browser in the NV prior to Opendtect manual installation.
