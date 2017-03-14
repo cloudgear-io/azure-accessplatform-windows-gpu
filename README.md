@@ -1,5 +1,3 @@
-![azureportaldeploy](https://blogs.nvidia.com/wp-content/uploads/2016/08/windows_azure_nvidia.jpg)![teradicilogo](https://upload.wikimedia.org/wikipedia/en/b/b8/Teradici_Corporate_logo_II_2013.png)
-
 ![Azure icon](https://dtb5pzswcit1e.cloudfront.net/assets/images/product_logos/icon_azure@2x.png)![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)![nvidia icon](https://cdn-img.easyicon.net/png/5552/555272.gif)
 
 # Deploy a Windows NV VM.
