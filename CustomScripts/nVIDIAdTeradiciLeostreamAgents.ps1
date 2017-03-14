@@ -45,6 +45,8 @@ if ($softwareExeName -like '*OpendTect*')
     $opendTectGetResp = Invoke-WebRequest $softUrl -UseBasicParsing
     [io.file]::WriteAllBytes($softPath, $opendTectGetResp.Content)
     #wget $softUrl -OutFile $softPath
+    
+    <# Download the large Sample block manually
     Write-Host "Get the Sample Block for OpendTect"
     $nlblockzip = "opendTect/F3_Demo_2016_training_v6.zip"
     $nlblockUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}", $storageAcc, $conName, $nlblockzip)
@@ -53,7 +55,8 @@ if ($softwareExeName -like '*OpendTect*')
     Write-Host "NL F3 Block download is from '$nlblockUrl'"
     $nlblockPath = [System.String]::Format("{0}{1}", $dest, $nlblockName)
     $nlblockGetResp = Invoke-WebRequest $nlblkurl -UseBasicParsing
-    [io.file]::WriteAllBytes($nlblockPath, $nlblockGetResp.Content)
+    [io.file]::WriteAllBytes($nlblockPath, $nlblockGetResp.Content)#>
+    
     #wget $nlblkurl -OutFile $nlblockPath
     
   }
