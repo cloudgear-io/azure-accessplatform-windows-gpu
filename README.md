@@ -1,4 +1,4 @@
-   ![Azure icon](https://imagine.microsoft.com/Content/Images/favicon.ico)           ![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)           ![nvidia icon](http://icons.iconarchive.com/icons/martz90/circle-addon1/128/nvidia-icon.png)
+   ![Azure icon](https://imagine.microsoft.com/Content/Images/favicon.ico)           ![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)           ![nvidia icon](http://img.informer.com/icons/png/128/3096/3096710.png)
 
 # Deploy a Windows NV VM.
 
