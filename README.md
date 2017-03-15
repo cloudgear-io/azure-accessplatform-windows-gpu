@@ -70,8 +70,8 @@ Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to tr
 
 ####  Manual Install of OpendTect for Sanity
 * On using default options of the template, **OpendTect Installer 6.0.5 would be available in D:\DownloadInstallers** folder of the NV
-* On using default options of the template, **D:\opendtect empty folder would be available as OpendTect Installation location for manual install**.
- * D: Drive of the NV is a NVMe SSD over PCIe interface and hence usage of the drive is preferred for software.
+* On using default options of the template, **D:\opendtect empty folder would be available as OpendTect Data Root location post manual install**.
+ * D: Drive of the NV is a NVMe SSD over PCIe interface and hence usage of the drive is preferred as the OpendTect Data Root directory.
 * Post-installation of ALL features of OpendTect Pro and successfully in D:\OpendTect, **ONLY** zip file survey option should be chosen via OpendTect startup and **the zip file for Netherlands North F3 Data should be downloaded directly from VM browser from [here](https://tdcm16sg112leo8193ls102.blob.core.windows.net/tdcm16sg112leo8193ls102/opendTect/F3_Demo_2016_training_v6.zip). It should be downloaded manually from browser in the NV prior to OpendTect manual installation.**
 
 #### MSFT OSCC
