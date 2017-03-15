@@ -187,16 +187,17 @@ if ($license) {
 	{ 
 		Write-Host  "Not 369.71."
 		
-			<# NVIDIA driver kicking ALSO needed for 369.95 driver #>
+			<# NVIDIA driver kicking NOT needed for 369.95 driver #>
 			#if ($nvidiaVer -match "369.95")
-
-			Write-Host "Driver kick ALSO needed for this NVIDIA graphics driver 369.95, kicking now..."
-			Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
+                        
+			<#
+			Write-Host "Driver kick for NVIDIA graphics driver .. kicking now..."
+			Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID" #>
     
 			<#Write-Host "Stopping NVIDIA Display Driver"
 			net stop nvsvc
 			Start-Sleep -s 90#>
-    
+                        <#
 			Write-Host "Disabling NVFBC capture"
 			./NvFBCEnable -disable
 			Start-Sleep -s 480
@@ -204,6 +205,7 @@ if ($license) {
 			Write-Host "Enabling NVFBC capture"
 			./NvFBCEnable -enable
 			Start-Sleep -s 90
+			#>
     
 			<#Write-Host "Starting NVIDIA Display Driver"
 			net start nvsvc
