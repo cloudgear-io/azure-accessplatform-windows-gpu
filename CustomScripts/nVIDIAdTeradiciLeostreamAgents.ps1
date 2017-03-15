@@ -16,11 +16,6 @@ $registryPath = "HKLM:\Software\Teradici\PCoIP\pcoip_admin"
 $Name = "pcoip.max_encode_threads"
 $value = "8"
 $Date = Get-Date
-<#$arguments = @(
-        "/qn" # display no interface 
-        "/norestart"
-        "/passive"
-		"/S")#>
 
 New-Item -Path $dest -ItemType directory
 New-Item -Path $opendtectloc -ItemType directory
@@ -44,7 +39,7 @@ if ($softwareExeName -like '*OpendTect*')
     $softPath = [System.String]::Format("{0}",$softwarePath)
     $opendTectGetResp = Invoke-WebRequest $softUrl -UseBasicParsing
     [io.file]::WriteAllBytes($softPath, $opendTectGetResp.Content)
-    #wget $softUrl -OutFile $softPath
+    Start-Sleep -s 60
     
     <# Download the large Sample block manually
     Write-Host "Get the Sample Block for OpendTect"
@@ -56,20 +51,8 @@ if ($softwareExeName -like '*OpendTect*')
     $nlblockPath = [System.String]::Format("{0}{1}", $dest, $nlblockName)
     $nlblockGetResp = Invoke-WebRequest $nlblkurl -UseBasicParsing
     [io.file]::WriteAllBytes($nlblockPath, $nlblockGetResp.Content)#>
-    
-    #wget $nlblkurl -OutFile $nlblockPath
-    
+        
   }
-elseif ($softwareExeName -like '*STAR*') 
-{
-    Add-Type -AssemblyName System.IO.Compression.FileSystem
-    $softwareUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/{2}", $storageAcc, $conName, $softwareExeName)
-    $softwareName = "STAR-View+11.04.010_win64_intel15.0.exe"
-    $softwarePath = [System.String]::Format("{0}{1}", $dest, $softwareName)
-    $softUrl = [System.String]::Format("{0}",$softwareUrl)
-    $softPath = [System.String]::Format("{0}",$softwarePath)
-    wget $softUrl -OutFile $softPath
-}
 else
 {
     Write-Host "No Software Chosen for Install in NVs"
@@ -81,7 +64,6 @@ if ($nvidiaazure -match "Yes")
     $nvidiacerUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/nvidia.zip", $storageAcc, $conName)
     $nvcerUrl = [System.String]::Format("{0}",$nvidiacerUrl)
     $nvcerGetResp = Invoke-WebRequest $nvcerUrl -UseBasicParsing
-    #wget $nvcerUrl -OutFile D:\Downloadinstallers\nvidia.zip
     [io.file]::WriteAllBytes("D:\Downloadinstallers\nvidia.zip", $nvcerGetResp.Content)
     Unzip "D:\Downloadinstallers\nvidia.zip" "D:\"
     certutil -f -addstore "TrustedPublisher" D:\nvidia.cer
@@ -89,7 +71,6 @@ if ($nvidiaazure -match "Yes")
     Write-Host "The NVIDIA Driver exe Url  is '$nvidiaUrl'"
     $nvidiaGetResp = Invoke-WebRequest $nvidiaUrl -UseBasicParsing
     [io.file]::WriteAllBytes("D:\Downloadinstallers\NVAzureDriver.zip", $nvidiaGetResp.Content)
-    #wget $nvidiaUrl -OutFile D:\Downloadinstallers\NVAzureDriver.zip
     Unzip "D:\Downloadinstallers\NVAzureDriver.zip" "D:\NVIDIAazure"
     $NVIDIAfolder = [System.String]::Format("D:\NVIDIAazure")
   }
@@ -103,9 +84,8 @@ else
 	Write-Host "The NVIDIA exe name is '$nvidiaExeName'"
 	$nvidiaExeGetResp = Invoke-WebRequest $nvidiaUrl -UseBasicParsing
 	[io.file]::WriteAllBytes($nvidiaExePath, $nvidiaExeGetResp.Content)
-	#wget $nvidiaUrl -OutFile $nvidiaExePath
 	& $nvidiaExePath  /s
-	Start-Sleep -s 120
+	Start-Sleep -s 240
 	$NVIDIAfolder = [System.String]::Format("C:\NVIDIA\{0}", $nvidiaVer)
 }
 
@@ -132,10 +112,8 @@ if ($license) {
 	[io.file]::WriteAllBytes($teradiciExePath, $teradiciAgentUrlGetResp.Content)
 	$leostreamAgentUrlGetResp = Invoke-WebRequest $leostreamAgentUrl -UseBasicParsing
 	[io.file]::WriteAllBytes($leostreamExePath, $leostreamAgentUrlGetResp.Content)
-	#wget $teradiciAgentUrl -OutFile $teradiciExePath
-	#wget $leostreamAgentUrl -OutFile $leostreamExePath
 	& $teradiciExePath /S /NoPostReboot
-	Start-Sleep -s 90 
+	Start-Sleep -s 120 
 	Write-Host "teradiciagent install over"
 	cd 'C:\Program Files (x86)\Teradici\PCoIP Agent\licenses\'
 	Write-Host "pre-activate"
@@ -143,7 +121,6 @@ if ($license) {
 	Write-Host "activation over"
 	if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*')) -and ($nvidiaVer -match "369.71"))
 	{
-	#if (($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*'))
 		if ($teradiciAgentVer -match "2.7.0.4060")
 		{
 		  IF(!(Test-Path $registryPath))
@@ -162,14 +139,12 @@ if ($license) {
 		 }
 
 			<# NVIDIA driver kicking Only needed for 369.71 driver #>
-			#if ($nvidiaVer -match "369.71")
-
 			Write-Host "Driver kick needed for this NVIDIA graphics driver 369.71, kicking now..."
 			Set-Location "C:\Program Files (x86)\Teradici\PCoIP Agent\GRID"
     
 			Write-Host "Stopping NVIDIA Display Driver"
 			net stop nvsvc
-			Start-Sleep -s 90#>
+			Start-Sleep -s 90
     
 			Write-Host "Disabling NVFBC capture"
 			./NvFBCEnable -disable
