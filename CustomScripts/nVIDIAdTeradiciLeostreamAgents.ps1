@@ -39,7 +39,7 @@ if ($softwareExeName -like '*OpendTect*')
     $softPath = [System.String]::Format("{0}",$softwarePath)
     $opendTectGetResp = Invoke-WebRequest $softUrl -UseBasicParsing
     [io.file]::WriteAllBytes($softPath, $opendTectGetResp.Content)
-    Start-Sleep -s 60
+    #Start-Sleep -s 60
     
     <# Download the large Sample block manually
     Write-Host "Get the Sample Block for OpendTect"
@@ -85,7 +85,7 @@ else
 	$nvidiaExeGetResp = Invoke-WebRequest $nvidiaUrl -UseBasicParsing
 	[io.file]::WriteAllBytes($nvidiaExePath, $nvidiaExeGetResp.Content)
 	& $nvidiaExePath  /s
-	Start-Sleep -s 240
+	#Start-Sleep -s 240
 	$NVIDIAfolder = [System.String]::Format("C:\NVIDIA\{0}", $nvidiaVer)
 }
 
@@ -93,7 +93,7 @@ Write-Host "The NVIDIA Folder name is '$NVIDIAfolder'"
 Set-Location $NVIDIAfolder
 Set-ExecutionPolicy Unrestricted -force
 .\setup.exe -s -noreboot -clean
-Start-Sleep -s 480
+#Start-Sleep -s 480
 
 if ($license) {
 	$teradiciAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/PCoIP_agent_release_installer_{2}_graphics.exe", $storageAcc, $conName, $teradiciAgentVer)
@@ -113,7 +113,7 @@ if ($license) {
 	$leostreamAgentUrlGetResp = Invoke-WebRequest $leostreamAgentUrl -UseBasicParsing
 	[io.file]::WriteAllBytes($leostreamExePath, $leostreamAgentUrlGetResp.Content)
 	& $teradiciExePath /S /NoPostReboot
-	Start-Sleep -s 120 
+	#Start-Sleep -s 120 
 	Write-Host "teradiciagent install over"
 	cd 'C:\Program Files (x86)\Teradici\PCoIP Agent\licenses\'
 	Write-Host "pre-activate"
@@ -173,7 +173,6 @@ if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
 	$omsExePath = [System.String]::Format("{0}{1}", $dest, $omsExeName)
 	$omsAgentUrlGetResp = Invoke-WebRequest $omsAgentUrl -UseBasicParsing
 	[io.file]::WriteAllBytes($omsExePath, $omsAgentUrlGetResp.Content)
-	#wget $omsAgentUrl -OutFile $omsExePath
 	Set-Location $dest
 	Set-ExecutionPolicy Unrestricted -force
 	.\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
