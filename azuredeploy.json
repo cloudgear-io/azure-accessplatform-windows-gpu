@@ -270,8 +270,7 @@
       "defaultValue": "opendTect/OpendTect_Installer_win64.exe",
       "allowedValues": [
         "opendTect/OpendTect_Installer_win64.exe",
-        "noinstall",
-        "STARView/STAR-View%2B11.04.010_win64_intel15.0.exe"
+        "noinstall"
       ],
       "metadata": {
         "description": "The software to install"
