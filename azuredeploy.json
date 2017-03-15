@@ -241,8 +241,9 @@
     },
     "teradiciAgentVer": {
       "type": "string",
-      "defaultValue": "2.8.0.5614",
+      "defaultValue": "2.8.0.5813",
       "allowedValues": [
+        "2.8.0.5813",
         "2.8.0.5614",
         "2.7.0.4060"
       ],
