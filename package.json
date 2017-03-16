@@ -1,5 +1,5 @@
 {
-  "name": "azure-bigcompute-hpcscripts",
+  "name": "azure-accessplatform-windows-gpu",
   "version": "1.0.0",
   "description": "A package file for developer depenedencies when testing templates",
   "scripts": {
