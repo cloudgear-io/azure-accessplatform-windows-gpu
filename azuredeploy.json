@@ -1025,14 +1025,14 @@
 			"location": "[resourceGroup().location]",
 			"dependsOn": [
 				"[parameters('publicIPAddressName')]",
-				"[variables('virtualNetworkName')]",
-				"[variables('subnetPrefix')]"
+				"[variables('virtualNetworkName')]"
 			],
 			"properties": {
 				"ipConfigurations": [{
 					"name": "[parameters('ipConfigurationsName')]",
 					"properties": {
-						"privateIPAllocationMethod": "Dynamic",
+						"privateIPAllocationMethod": "Static",
+						"privateIPAddress": "10.0.1.253",
 						"publicIPAddress": {
 							"id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]"
 						},
