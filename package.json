@@ -32,10 +32,10 @@
   "main": "Gruntfile.js",
   "keywords": [
     "Azure",
-    "GPU"
-    "M60"
-    "NVIDIA"
-    "Teradici"
+    "GPU",
+    "M60",
+    "NVIDIA",
+    "Teradici",
     "WindowsServer"
   ]
 }
