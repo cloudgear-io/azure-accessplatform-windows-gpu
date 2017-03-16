@@ -2,6 +2,8 @@
 
 # Deploy a Windows NV VM.
 
+ [![Build Status](https://travis-ci.org/Azure/azure-accessplatform-windows-gpu.png?branch=master)](https://travis-ci.org/Azure/azure-accessplatform-windows-gpu)
+
 # **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)
 
 * [Prereqs](#prereqs)
