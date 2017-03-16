@@ -326,7 +326,8 @@
 		"nicName": "[parameters('VMnicName')]",
 		"subnetName": "[parameters('subName')]",
 		"subnetPrefix": "[parameters('subPrefix')]",
-		"subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), concat(parameters('VNetName'),variables('subnetName')))]",
+		"vnetID": "[resourceId(resourceGroup().name, 'Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
+		"subnetRef": "[concat(variables('vnetID'),'/subnets/', concat(parameters('VNetName'),variables('subnetName')))]",
 		"vhdStorageAccountName": "[uniqueString(resourceGroup().id, 'storage')]",
 		"sizeOfDataDisksInGB": 1022,
 		"diskCaching": "ReadWrite",
@@ -1031,8 +1032,7 @@
 				"ipConfigurations": [{
 					"name": "[parameters('ipConfigurationsName')]",
 					"properties": {
-						"privateIPAllocationMethod": "Static",
-						"privateIPAddress": "10.0.1.253",
+						"privateIPAllocationMethod": "Dynamic",
 						"publicIPAddress": {
 							"id": "[resourceId('Microsoft.Network/publicIPAddresses',parameters('publicIPAddressName'))]"
 						},
