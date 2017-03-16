@@ -1,5 +1,3 @@
----
----
 ![Azure icon](https://www.microsoft.com/favicon.ico)           ![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)           ![nvidia icon](http://img.informer.com/icons/png/128/3096/3096710.png)
 
 ### Deploy a Windows NV VM.
