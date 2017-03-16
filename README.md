@@ -1,6 +1,6 @@
    ![Azure icon](https://www.microsoft.com/favicon.ico)           ![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)           ![nvidia icon](http://img.informer.com/icons/png/128/3096/3096710.png)
 
-# Deploy a Windows NV VM.
+### Deploy a Windows NV VM.
 
  [![Build Status](https://travis-ci.org/Azure/azure-accessplatform-windows-gpu.png?branch=master)](https://travis-ci.org/Azure/azure-accessplatform-windows-gpu)
 
