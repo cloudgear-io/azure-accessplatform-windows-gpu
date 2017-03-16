@@ -51,6 +51,7 @@ Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to tr
 * PCoIP Graphics Agent for Windows Log Collection (2.8.0.5813 (2.8 Beta Presently) and 2.7.0.4060) from the Teradici System Tray (right click Teradici Icon on System Tray) and collect Agent Logs (from the pop-up).
  * PCoIP Graphics Agent for Windows 2.8.0.5813 (2.8 Beta Presently) and 2.7.0.4060  uses Multiple PCoIP encoding.
 * The PCOIP Agent Logs  [v1.11 ~Beta]((https://techsupport.teradici.com/link/portal/15134/15164/Download/2852)) from the Office Client machine of the end-user from <code>C:\Users\user_name\AppData\Local\Teradici\PCoIPClient\logs</code>
+* The PCoIP Event filter parameter is defaulted to 2 and can be increased to 3 for debug during provisioning time.
 
 #### Optional Usage of Operational Management Suite
 **OMS Setup (for mostly Security, compliance and backup in this case) is optional and the OMS Workspace Id and OMS Workspace Key can either be kept blank or populated post the steps below.**
