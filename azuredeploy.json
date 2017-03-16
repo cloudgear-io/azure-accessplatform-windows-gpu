@@ -1007,7 +1007,7 @@
         },
         "subnets": [
           {
-            "name": "[concat(parameters('VNetName'), '/', variables('subnetName'))]",
+            "name": "[concat(parameters('VNetName'),variables('subnetName'))]",
             "properties": {
               "addressPrefix": "[variables('subnetPrefix')]"
             }
