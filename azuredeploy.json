@@ -93,7 +93,7 @@
 		},
 		"subPrefix": {
 			"type": "string",
-			"defaultValue": "10.0.0.0/24",
+			"defaultValue": "10.0.1.0/24",
 			"metadata": {
 				"description": "The Subnet Prefix"
 			}
@@ -1025,7 +1025,8 @@
 			"location": "[resourceGroup().location]",
 			"dependsOn": [
 				"[parameters('publicIPAddressName')]",
-				"[variables('virtualNetworkName')]"
+				"[variables('virtualNetworkName')]",
+				"[variables('subnetPrefix')]"
 			],
 			"properties": {
 				"ipConfigurations": [{
@@ -1038,12 +1039,6 @@
 						"subnet": {
 							"id": "[variables('subnetRef')]"
 						}
-					}
-				}],
-				"subnets": [{
-					"name": "[concat(parameters('VNetName'),variables('subnetName'))]",
-					"properties": {
-						"addressPrefix": "[variables('subnetPrefix')]"
 					}
 				}]
 			}
