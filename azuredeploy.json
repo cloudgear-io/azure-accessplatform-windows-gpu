@@ -251,7 +251,7 @@
         "description": "The Teradici Agent Version - latest is 2.8.0.5813 - Beta"
       }
     },
-    
+
     "OMSWorkSpaceId": {
       "type": "string",
       "defaultValue": "",
@@ -1007,7 +1007,7 @@
         },
         "subnets": [
           {
-            "name": "[variables('subnetName')]",
+            "name": "[concat(parameters('VNetName'), '/', variables('subnetName'))]",
             "properties": {
               "addressPrefix": "[variables('subnetPrefix')]"
             }
