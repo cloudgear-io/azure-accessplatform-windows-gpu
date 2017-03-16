@@ -93,7 +93,7 @@
     },
     "subPrefix": {
       "type": "string",
-      "defaultValue": "10.0.1.0/24",
+      "defaultValue": "10.0.0.0/24",
       "metadata": {
         "description": "The Subnet Prefix"
       }
