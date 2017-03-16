@@ -203,6 +203,13 @@
         "description": "The Public Address Name"
       }
     },
+    "ipConfigurationsName": {
+      "type": "string",
+      "defaultValue": "ipconfig2",
+      "metadata": {
+        "description": "The ip Configurations Name"
+      }
+    },
     "allocationMethod": {
       "type": "string",
       "defaultValue": "Static",
@@ -1027,7 +1034,7 @@
       "properties": {
         "ipConfigurations": [
           {
-            "name": "ipconfig1",
+            "name": "[parameters('ipConfigurationsName')]",
             "properties": {
               "privateIPAllocationMethod": "Dynamic",
               "publicIPAddress": {
