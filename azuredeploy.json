@@ -1029,7 +1029,8 @@
       "location": "[resourceGroup().location]",
       "dependsOn": [
         "[parameters('publicIPAddressName')]",
-        "[variables('virtualNetworkName')]"
+        "[variables('virtualNetworkName')]",
+        "[variables('subnetRef')]"
       ],
       "properties": {
         "ipConfigurations": [
