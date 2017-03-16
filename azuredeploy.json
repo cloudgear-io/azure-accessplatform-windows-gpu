@@ -1025,8 +1025,7 @@
 			"location": "[resourceGroup().location]",
 			"dependsOn": [
 				"[parameters('publicIPAddressName')]",
-				"[variables('virtualNetworkName')]",
-				"[concat(parameters('VNetName'),variables('subnetName'))]"
+				"[variables('virtualNetworkName')]"
 			],
 			"properties": {
 				"ipConfigurations": [{
@@ -1039,6 +1038,12 @@
 						"subnet": {
 							"id": "[variables('subnetRef')]"
 						}
+					}
+				}],
+				"subnets": [{
+					"name": "[concat(parameters('VNetName'),variables('subnetName'))]",
+					"properties": {
+						"addressPrefix": "[variables('subnetPrefix')]"
 					}
 				}]
 			}
