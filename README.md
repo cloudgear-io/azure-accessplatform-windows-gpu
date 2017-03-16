@@ -52,7 +52,7 @@ Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to tr
  * PCoIP Graphics Agent for Windows 2.8.0.5813 (2.8 Beta Presently) and 2.7.0.4060  uses Multiple PCoIP encoding.
 * The PCOIP Agent Logs  [v1.11 ~Beta]((https://techsupport.teradici.com/link/portal/15134/15164/Download/2852)) from the Office Client machine of the end-user from <code>C:\Users\user_name\AppData\Local\Teradici\PCoIPClient\logs</code>
 * The PCoIP Event filter can be increased to 3 for debug as per the following registry key entry.
-     ```
+```
             HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Teradici\PCoIP\pcoip_admin_defaults
                DWORD: pcoip.event_filter_mode
             Set the value to one of the following: 
@@ -60,7 +60,7 @@ Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to tr
                1 - (ERROR)
                2 - (INFO)
                3 - (Debug)
-      ```
+```
 
 #### Optional Usage of Operational Management Suite
 **OMS Setup (for mostly Security, compliance and backup in this case) is optional and the OMS Workspace Id and OMS Workspace Key can either be kept blank or populated post the steps below.**
