@@ -52,15 +52,15 @@ Tip: Map you local drive only when using Remote Desktop Client (not PCoIP) to tr
  * PCoIP Graphics Agent for Windows 2.8.0.5813 (2.8 Beta Presently) and 2.7.0.4060  uses Multiple PCoIP encoding.
 * The PCOIP Agent Logs  [v1.11 ~Beta]((https://techsupport.teradici.com/link/portal/15134/15164/Download/2852)) from the Office Client machine of the end-user from <code>C:\Users\user_name\AppData\Local\Teradici\PCoIPClient\logs</code>
 * The PCoIP Event filter can be increased to 3 for debug as per the following registry key entry.
-```
-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Teradici\PCoIP\pcoip_admin_defaults
-DWORD: pcoip.event_filter_mode
-3.	Set the value to one of the following: 
-0 - (CRITICAL)
-1 - (ERROR)
-2 - (INFO)
-3 - (Debug)
-```
+     ```
+            HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Teradici\PCoIP\pcoip_admin_defaults
+               DWORD: pcoip.event_filter_mode
+            Set the value to one of the following: 
+               0 - (CRITICAL)
+               1 - (ERROR)
+               2 - (INFO)
+               3 - (Debug)
+      ```
 
 #### Optional Usage of Operational Management Suite
 **OMS Setup (for mostly Security, compliance and backup in this case) is optional and the OMS Workspace Id and OMS Workspace Key can either be kept blank or populated post the steps below.**
@@ -69,7 +69,7 @@ DWORD: pcoip.event_filter_mode
 
 * Provide a Name for the OMS Workspace.
 * Link your Subscription to the OMS Portal.
-* Depending upon the region, a Resource Group would be created in the Sunscription like "mms-weu" for "West Europe" and the named OMS Workspace with portal details etc. would be created in the Resource Group.
+* Depending upon the region, a Resource Group would be created in the Sunscription like "mms-weu" for "West Europe" and the named OMS Workspace with portal details etc. would be created in the Resource Grou
 * login to https://<<OMSWorkspaceName>>.portal.mms.microsoft.com 
 * Add The solutions "Agent Health", "Backup", "Security & Compliance", "Activity Log Analytics" and "Protection & Recovery" Solutions from the "Solutions Gallery" of the OMS Portal of the workspace.
 * Logon to the OMS Workspace and Go to -> Settings -> "Connected Sources"  -> "Windows Servers" -> Obtain the Workspace ID like <code>ba1e3f33-648d-40a1-9c70-3d8920834669</code> and the "Primary and/or Secondary Key" like <code>xkifyDr2s4L964a/Skq58ItA/M1aMnmumxmgdYliYcC2IPHBPphJgmPQrKsukSXGWtbrgkV2j1nHmU0j8I8vVQ==</code>
