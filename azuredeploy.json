@@ -319,7 +319,7 @@
     "nicName": "[parameters('VMnicName')]",
     "subnetName": "[parameters('subName')]",
     "subnetPrefix": "[parameters('subPrefix')]",
-    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), variables('subnetName'))]",
+    "subnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets', variables('virtualNetworkName'), concat(parameters('VNetName'),variables('subnetName')))]",
     "vhdStorageAccountName": "[uniqueString(resourceGroup().id, 'storage')]",
     "sizeOfDataDisksInGB": 1022,
     "diskCaching": "ReadWrite",
