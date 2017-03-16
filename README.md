@@ -4,7 +4,7 @@
 
  [![Build Status](https://travis-ci.org/Azure/azure-accessplatform-windows-gpu.png?branch=master)](https://travis-ci.org/Azure/azure-accessplatform-windows-gpu)
 
-#### __**WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)__
+#### **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)
 
 * [Prereqs](#prereqs)
 * [Deploy and Visualize](#deploy-and-visualize)
