@@ -15,6 +15,9 @@ $nuget4dockerVer = $args[11]
 $registryPath = "HKLM:\Software\Teradici\PCoIP\pcoip_admin"
 $Name = "pcoip.max_encode_threads"
 $value = "8"
+$registryPath1 = "HKLM:\Software\Policies\Teradici\PCoIP\pcoip_admin_defaults"
+$Name1 = "pcoip.event_filter_mode"
+$value1 = $args[12]
 $Date = Get-Date
 
 New-Item -Path $dest -ItemType directory
@@ -119,6 +122,18 @@ if ($license) {
 	Write-Host "pre-activate"
 	.\appactutil.exe -served -comm soap -commServer https://teradici.flexnetoperations.com/control/trdi/ActivationService -entitlementID $license
 	Write-Host "activation over"
+
+	<# Setting Event Filter Mode #>
+	IF(!(Test-Path $registryPath1))
+			  {
+			  New-Item -Path $registryPath1 -Force | Out-Null
+			  New-ItemProperty -Path $registryPath1 -Name $name1 -Value $value1 -PropertyType DWORD -Force | Out-Null
+			  }
+    ELSE 
+			  {
+			  New-ItemProperty -Path $registryPath1 -Name $name1 -Value $value1 -PropertyType DWORD -Force | Out-Null
+			  }
+
 	if ((($teradiciAgentVer -match "2.7.0.4060") -or ($teradiciAgentVer -like '*2.8*')) -and ($nvidiaVer -match "369.71"))
 	{
 		if ($teradiciAgentVer -match "2.7.0.4060")
