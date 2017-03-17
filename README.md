@@ -107,3 +107,7 @@ Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://gi
 Patches can be submitted as GitHub pull requests. If using GitHub please make sure your branch applies to the current master as a 'fast forward' merge (i.e. without creating a merge commit). Use the `git rebase` command to update your branch to the current master if necessary.
 
 #### Deploying to existing Azure resource group with existing Azure Virtual Network
+
+Though this is a malpractice since resource groups are for isolation of specific automated workloads, some personnel prefer it to reuse manually created NSGs which are non-automated procedures. It is possible to deploy this to existing resourcegroup with existing vnets, since all configurations are exposed including ipconfigurations. Internal IP Allocation method is Dynamic and external Allocation method is exposed as "Dynamic" or "Static". One has to judiciously choose the Address Space, subnet Range, nicname, existing virtual network name in existing resource group so that conflict does not occur. Output would be new subnet in existing vnet with new address range, new nic name. This would not be part of a cluster.
+
+For clustering advanced network configurations, please view [Azure Big Compute repo](https://aka.ms/azurebigcompute)
