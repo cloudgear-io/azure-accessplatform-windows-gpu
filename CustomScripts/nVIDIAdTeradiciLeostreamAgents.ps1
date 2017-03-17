@@ -96,7 +96,7 @@ Write-Host "The NVIDIA Folder name is '$NVIDIAfolder'"
 Set-Location $NVIDIAfolder
 Set-ExecutionPolicy Unrestricted -force
 .\setup.exe -s -noreboot -clean
-Start-Sleep -s 360
+Start-Sleep -s 480
 
 if ($license) {
 	$teradiciAgentUrl = [System.String]::Format("https://{0}.blob.core.windows.net/{1}/PCoIP_agent_release_installer_{2}_graphics.exe", $storageAcc, $conName, $teradiciAgentVer)
@@ -116,7 +116,7 @@ if ($license) {
 	$leostreamAgentUrlGetResp = Invoke-WebRequest $leostreamAgentUrl -UseBasicParsing
 	[io.file]::WriteAllBytes($leostreamExePath, $leostreamAgentUrlGetResp.Content)
 	& $teradiciExePath /S /NoPostReboot
-	Start-Sleep -s 240 
+	Start-Sleep -s 480
 	Write-Host "teradiciagent install over"
 	cd 'C:\Program Files (x86)\Teradici\PCoIP Agent\licenses\'
 	Write-Host "pre-activate"
@@ -190,7 +190,8 @@ if ($omsWorkSpaceId -and $omsWorkSpaceKey) {
 	[io.file]::WriteAllBytes($omsExePath, $omsAgentUrlGetResp.Content)
 	Set-Location $dest
 	Set-ExecutionPolicy Unrestricted -force
-	.\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPACE=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
+	.\MMASetup-AMD64.exe /Q:A /R:N /C:"setup.exe /qn ADD_OPINSIGHTS_WORKSPAC=1 OPINSIGHTS_WORKSPACE_ID=$omsWorkSpaceId  OPINSIGHTS_WORKSPACE_KEY=$omsWorkSpaceKey AcceptEndUserLicenseAgreement=1"
+	Start-Sleep -s 480
 }
 
 <#Install Docker EE for Windows Server 2016>
@@ -201,5 +202,5 @@ Install-Package -Name docker -ProviderName DockerMsftProvider -Force#>
 
 <# Reboot in 60 seconds #>
 
-C:\WINDOWS\system32\shutdown.exe -r -f -t 120
+C:\WINDOWS\system32\shutdown.exe -r -f -t 240
 Write-Host "end script"
