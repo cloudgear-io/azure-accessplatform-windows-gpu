@@ -95,14 +95,14 @@
 			"type": "string",
 			"defaultValue": "10.0.0.0/24",
 			"metadata": {
-				"description": "The Subnet Prefix"
+				"description": "The Subnet Prefix, please change CIDR NS   for deploying to existing VNets "
 			}
 		},
 		"addPrefix": {
 			"type": "string",
 			"defaultValue": "10.0.0.0/16",
 			"metadata": {
-				"description": "The address Prefix"
+				"description": "The address Prefix for the VNet. Please change for deploying to existing vnet with an existing addressspace "
 			}
 		},
 		"subName": {
@@ -205,9 +205,9 @@
 		},
 		"ipConfigurationsName": {
 			"type": "string",
-			"defaultValue": "ipconfig2",
+			"defaultValue": "ipconfig1",
 			"metadata": {
-				"description": "The ip Configurations Name"
+				"description": "The ip Configuration Name. please change for deploying to existing vnet."
 			}
 		},
 		"allocationMethod": {
