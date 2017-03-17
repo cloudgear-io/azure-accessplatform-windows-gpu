@@ -79,21 +79,21 @@
 		},
 		"VNetName": {
 			"type": "string",
-			"defaultValue": "vnet01",
+			"defaultValue": "vnet",
 			"metadata": {
 				"description": "The VNetName"
 			}
 		},
 		"VMnicName": {
 			"type": "string",
-			"defaultValue": "nic01",
+			"defaultValue": "nic",
 			"metadata": {
 				"description": "The Nicname"
 			}
 		},
 		"subPrefix": {
 			"type": "string",
-			"defaultValue": "10.0.1.0/24",
+			"defaultValue": "10.0.0.0/24",
 			"metadata": {
 				"description": "The Subnet Prefix"
 			}
@@ -107,7 +107,7 @@
 		},
 		"subName": {
 			"type": "string",
-			"defaultValue": "sub01",
+			"defaultValue": "sub",
 			"metadata": {
 				"description": "The Subnet Name"
 			}
