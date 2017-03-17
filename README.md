@@ -15,6 +15,7 @@
 * [Credits](#credits)
 * [Reporting Bugs](#reporting-bugs)
 * [Patches and pull requests](#patches-and-pull-requests)
+* [Deploying to existing Azure resource group with existing Azure Virtual Network](#deploying-to-existing-azure-resource-group-with-existing-azure-virtual-network)
 
 #### Prereqs
 **Obtain a Trial License Activation Code For the Teradici "Graphics Agent for Windows" from [here](http://connect.teradici.com/cas-trial) to put in the template parameter. If that is not put in, Windows Server would be available over [Personal Session Desktop for RDS using RDP 10](https://blogs.technet.microsoft.com/hybridcloudbp/2016/11/15/new-rds-capabilities-in-windows-server-2016-for-service-providers/)**
@@ -104,3 +105,5 @@ Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://gi
 #### Patches and pull requests
 
 Patches can be submitted as GitHub pull requests. If using GitHub please make sure your branch applies to the current master as a 'fast forward' merge (i.e. without creating a merge commit). Use the `git rebase` command to update your branch to the current master if necessary.
+
+#### Deploying to existing Azure resource group with existing Azure Virtual Network
