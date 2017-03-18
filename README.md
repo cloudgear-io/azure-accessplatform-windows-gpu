@@ -1,4 +1,4 @@
-![Azure icon](https://www.microsoft.com/favicon.ico)           ![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)           ![nvidia icon](http://img.informer.com/icons/png/128/3096/3096710.png)
+![Azure icon](https://www.microsoft.com/favicon.ico)           ![teradici icon](http://img.informer.com/icons/png/128/5487/5487453.png)           ![nvidia icon](http://img.informer.com/icons/png/128/3096/3096710.png) ![Intel icon](https://yepo.com.au/media/catalog/product/cache/1/thumbnail/128x128/9df78eab33525d08d6e5fb8d27136e95/a/h/ahr0cdovl2ltywdlcy5py2vjyxquyml6l2ltzy9nywxszxj5lzi2mje1njq5xzg2mdguanbn.jpg) 
 
 ### Deploy a Windows NV VM.
 
