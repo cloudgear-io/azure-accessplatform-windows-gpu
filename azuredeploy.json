@@ -72,7 +72,7 @@
 		},
 		"VMName": {
 			"type": "string",
-			"defaultValue": "win16m60",
+			"defaultValue": "vw16vm",
 			"metadata": {
 				"description": "The VMName"
 			}
