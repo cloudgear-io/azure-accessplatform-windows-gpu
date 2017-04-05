@@ -198,7 +198,7 @@
 		},
 		"publicIPAddressName": {
 			"type": "string",
-			"defaultValue": "winm60",
+			"defaultValue": "nvpublic",
 			"metadata": {
 				"description": "The Public Address Name"
 			}
