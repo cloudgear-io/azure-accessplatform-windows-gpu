@@ -1073,7 +1073,8 @@
                         "version": "[parameters('imagever')]"
                     },
                     "osDisk": {
-                        "name": "osdisk",
+                        "name": "[parameters('VMName')]",
+                        "createOption": "fromImage",
                         "managedDisk": {
                             "storageAccountType": "Standard_LRS"
                         }
