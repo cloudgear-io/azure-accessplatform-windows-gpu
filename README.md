@@ -4,7 +4,7 @@
 
  [![Build Status](https://travis-ci.org/Azure/azure-accessplatform-windows-gpu.png?branch=master)](https://travis-ci.org/Azure/azure-accessplatform-windows-gpu)
 
-#### **WIP** [Check releases](https://github.com/Azure/azure-accessplatform-windows-gpu/tags)
+#### **WIP** [Check releases](https://github.com/cloudgear-io/azure-accessplatform-windows-gpu/tags)
 
 * [Prereqs](#prereqs)
 * [Deploy and Visualize](#deploy-and-visualize)
@@ -34,10 +34,10 @@ for Windows.
 * nView needs to be enabled manually. Right click Desktop-> nview-> enable  [User Guide](http://www.nvidia.com/content/quadro/pdf/nView-user-guide.pdf)
 
 #### Deploy and Visualize
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fcloudgear-io%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
-<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
+<a href="http://armviz.io/#/?load=https%3A%2F%2Fraw.githubusercontent.com%2Fcloudgear-io%2Fazure-accessplatform-windows-gpu%2Fmaster%2Fazuredeploy.json" target="_blank">
     <img src="http://armviz.io/visualizebutton.png"/>
 </a>
 
@@ -100,7 +100,7 @@ For more information see the [Code of Conduct FAQ](https://opensource.microsoft.
 
 #### Reporting bugs
 
-Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://github.com/Azure/azure-accessplatform-windows-gpu/issues)
+Please report bugs  by opening an issue in the [GitHub Issue Tracker](https://github.com/cloudgear-io/azure-accessplatform-windows-gpu/issues)
 
 #### Patches and pull requests
 
